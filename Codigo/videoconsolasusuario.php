@@ -40,12 +40,12 @@
 	?>
 
 	<div class="card col-6 col-md-4 col-xl-3" id="carta-catalogo">
-		  		<img class="imagen-catalogo card-img-top" src="<?php echo $mostrar['Imagen'] ?>">
+		  		<img class="imagen-catalogo card-img-top" src="<?php echo $mostrar['Imagen']; ?>">
 		  			<div class="card-body">
-			    		<h5 class="card-title"><b> <?php echo $mostrar['Nombre'] ?> </b></h5><br>
-					   		<p class="card-text">Lanzamiento: <b> <?php echo $mostrar['Lanzamiento'] ?> </b></p>
-					   		<p class="card-text">Precio: <b> <?php echo $mostrar['Precio'] ?> </b></p>
-		 	 				<p class="card-text">Stock: <b> <?php echo $mostrar['Stock'] ?> </b></p>
+			    		<h5 class="card-title"><b> <?php echo $mostrar['Nombre']; ?> </b></h5><br>
+					   		<p class="card-text">Lanzamiento: <b> <?php echo $mostrar['Lanzamiento']; ?> </b></p>
+					   		<p class="card-text">Precio: <b> <?php echo $mostrar['Precio']; ?> </b></p>
+		 	 				<p class="card-text">Stock: <b> <?php echo $mostrar['Stock']; ?> </b></p>
 		 	 		</div>
 
 		 	 			<td>
