@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 13-12-2021 a las 22:52:53
--- Versión del servidor: 10.4.19-MariaDB
--- Versión de PHP: 7.3.28
+-- Host: localhost:3306
+-- Generation Time: Apr 18, 2022 at 10:05 PM
+-- Server version: 5.7.24
+-- PHP Version: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `tiendaonline`
+-- Database: `tiendaonline`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cesta`
+-- Table structure for table `cesta`
 --
 
 CREATE TABLE `cesta` (
@@ -36,7 +36,54 @@ CREATE TABLE `cesta` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `item`
+-- Table structure for table `comentarioplataforma`
+--
+
+CREATE TABLE `comentarioplataforma` (
+  `idComentario` int(11) NOT NULL,
+  `comentario` varchar(500) NOT NULL,
+  `idUsuario` int(11) NOT NULL,
+  `idPlataforma` int(11) NOT NULL,
+  `fecha` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `comentarioplataforma`
+--
+
+INSERT INTO `comentarioplataforma` (`idComentario`, `comentario`, `idUsuario`, `idPlataforma`, `fecha`) VALUES
+(1, 'hhhh', 12, 3, '2022-04-18'),
+(2, 'aaaaaaaaaa', 10, 3, '2022-04-18'),
+(3, 'aaaaaaaaa', 10, 3, '2022-04-18'),
+(4, 'aaaaaaaaa', 10, 3, '2022-04-18'),
+(5, 'aaaaaaaaa', 10, 3, '2022-04-18'),
+(6, 'aaaaaaaaa', 10, 3, '2022-04-18'),
+(7, 'aaaaaaaaa', 10, 3, '2022-04-18'),
+(8, 'aaaaaaaaa', 10, 3, '2022-04-18'),
+(9, 'aaaaaaaaa', 10, 3, '2022-04-18'),
+(10, 'aaaaaaaaa', 10, 3, '2022-04-18'),
+(11, 'aaaaaaaaa', 10, 3, '2022-04-18'),
+(12, 'aaaaaaaaa', 10, 3, '2022-04-18'),
+(13, 'aaaaaaaaa', 10, 3, '2022-04-18');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comentariovideojuego`
+--
+
+CREATE TABLE `comentariovideojuego` (
+  `idComentario` int(11) NOT NULL,
+  `comentario` varchar(500) NOT NULL,
+  `idUsuario` int(11) NOT NULL,
+  `Videojuego` int(11) NOT NULL,
+  `fecha` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `item`
 --
 
 CREATE TABLE `item` (
@@ -49,7 +96,7 @@ CREATE TABLE `item` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `plataforma`
+-- Table structure for table `plataforma`
 --
 
 CREATE TABLE `plataforma` (
@@ -64,11 +111,11 @@ CREATE TABLE `plataforma` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `plataforma`
+-- Dumping data for table `plataforma`
 --
 
 INSERT INTO `plataforma` (`idPlataforma`, `Nombre`, `Lanzamiento`, `Precio`, `Stock`, `Descripcion`, `Imagen`, `Logo`) VALUES
-(2, 'Nintendo Switch', '2017-03-17', 329, 25, 'Nintendo Switch  es la octava consola de videojuegos principal desarrollada por Nintendo. Conocida en el desarrollo por su nombre codigo UNiX, se dio a conocer en octubre de 2016 y fue lanzada mundialmente el 3 de marzo de 2017. Nintendo considera a Switch una consola hibrida. Se puede utilizar como consola de sobremesa con la unidad principal insertada en una estacion de acoplamiento para conectarla con un televisor. Alternativamente, puede ser extraida de la base y utilizada de forma similar a una tableta a traves de su pantalla tactil LCD, o colocada sobre una superficie gracias a su soporte plastico integrado siendo asi visible por varios jugadores. La Switch utiliza dos controladores inalambricos llamados en conjunto Joy-Con, que incluyen cuatro botones de accion estandar y un joystick direccional, asi como sensores para la deteccion de movimiento y retroalimentacion tactil de alta definicion, aunque se diferencian en algunos botones y caracteristicas adicionales. Dos Joy-Con pueden conectarse uno a cada lado de la consola para usarse como consola portatil, conectarse al accesorio Grip proporcionado junto a la consola para usarlos como un mando mas tradicional, o ser utilizados individualmente en la mano como el mando Wii, y de esta forma usarse con juegos multijugador locales. Tambien puede utilizar ciertos controles inal?mbricos y/o alambricos que no incluye la consola, adoptado como Pro Controller, que incluyen las mismas caracteristicas que los mandos tradicionales a excepci?n de que este incluye deteccion NFC para Amiibo y vibracion HD.   Los juegos para esta consola y otras aplicaciones estan disponibles como cartuchos fisicos ROM de flash y como distribucion digital, y no utilizan bloqueo de region, por lo que puedes comprar juegos de cualquier mercado.  ', 'imagenes/nintendo switch.jpg', 'imagenes/switch logo.png'),
+(2, 'Nintendo Switch', '2017-03-17', 329, 25, 'Nintendo Switch  es la octava consola de videojuegos principal desarrollada por Nintendo. Conocida en el desarrollo por su nombre codigo UNiX, se dio a conocer en octubre de 2016 y fue lanzada mundialmente el 3 de marzo de 2017. Nintendo considera a Switch una consola hibrida. Se puede utilizar como consola de sobremesa con la unidad principal insertada en una estacion de acoplamiento para conectarla con un televisor. Alternativamente, puede ser extraida de la base y utilizada de forma similar a una tableta a traves de su pantalla tactil LCD, o colocada sobre una superficie gracias a su soporte plastico integrado siendo asi visible por varios jugadores. La Switch utiliza dos controladores inalambricos llamados en conjunto Joy-Con, que incluyen cuatro botones de accion estandar y un joystick direccional, asi como sensores para la deteccion de movimiento y retroalimentacion tactil de alta definicion, aunque se diferencian en algunos botones y caracteristicas adicionales. Dos Joy-Con pueden conectarse uno a cada lado de la consola para usarse como consola portatil, conectarse al accesorio Grip proporcionado junto a la consola para usarlos como un mando mas tradicional, o ser utilizados individualmente en la mano como el mando Wii, y de esta forma usarse con juegos multijugador locales. Tambien puede utilizar ciertos controles inal?mbricos y/o alambricos que no incluye la consola, adoptado como Pro Controller, que incluyen las mismas caracteristicas que los mandos tradicionales a excepci?n de que este incluye deteccion NFC para Amiibo y vibracion HD.   Los juegos para esta consola y otras aplicaciones estan disponibles como cartuchos fisicos ROM de flash y como distribucion digital, y no utilizan bloqueo de region, por lo que puedes comprar juegos de cualquier mercado.  ', 'imagenes/switch.jpg', 'imagenes/switch logo.png'),
 (3, 'Playstation 5', '2020-11-23', 499, 0, 'PlayStation 5 es una consola de videojuegos de sobremesa desarrollada por Sony Interactive Entertainment. Es la sucesora de la PlayStation 4, y se lanzo el 12 de noviembre de 2020 en Norteamerica, Japon, Australasia y Corea del Sur, mientras que fue lanzada el 19 de noviembre de 2020 en el resto del mundo.   Es la quinta consola de sobremesa de la marca PlayStation y la tercera en ser diseñada por Mark Cerny. Desde su lanzamiento la consola ha contado con dos modelos: una consola PlayStation 5 con lector de discos BD UHD-ROM y tambien para la funcion multimedia, y una versi?n digital llamada, PlayStation 5 Digital Edition sin el lector.   La consola PS5 compite contra las consolas Xbox Series X|S de Microsoft y Switch de Nintendo para abrir paso a la novena generacion de videojuegos.   La PlayStation 5 utiliza el mismo tipo de CPU de la marca AMD que la PlayStation 4, pero introduce una unidad de estado salido (SSD) personalizada diseñada para la transmision de datos de alta velocidad que permiten mejoras significativas en el rendimiento gráfico. El hardware también incluye una GPU AMD personalizada que posibilita la renderizacion por trazado de rayos, soporte para pantallas de resolucion 4K y una alta tasa de fotogramas por segundo, efectos de audio 3D en tiempo real y retrocompatibilidad con la mayor?a de los videojuegos para PlayStation 4 y PlayStation VR.   ', 'imagenes/playstation 5.jpg', 'imagenes/ps5 logo.jpg'),
 (4, 'Playstation 4', '2013-11-29', 399, 15, 'PlayStation 4 oficialmente abreviada como PS4) es la cuarta videoconsola del modelo PlayStation.8 Es la segunda consola de Sony en ser diseñada por Mark Cerny y forma parte de las videoconsolas de octava generacion. Fue anunciada oficialmente el 20 de febrero de 2013 en el evento PlayStation Meeting 2013,9 aunque el diseño de la consola no fue presentado hasta el 10 de junio en el E3 2013.10 Es la sucesora de la PlayStation 3 y compite con Wii U y Switch de Nintendo y Xbox One de Microsoft. Su lanzamiento fue el 15 de noviembre de 2013 en Estados Unidos y en Europa y Sudamerica fue el 29 de noviembre de 2013,119 mientras que en Japon fue el 22 de febrero de 2014.2   Alejandose de la compleja arquitectura utilizada en el procesador Cell de la videoconsola PlayStation 3, la PlayStation 4 cuenta con un procesador AMD de 8 nucleos bajo la arquitectura x86-64. Estas instrucciones x86-64 est?n dise?ados para hacer mas ficil el desarrollo de videojuegos en la consola de nueva generacion, que atrae a un mayor numero de desarrolladores. Estos cambios ponen de manifiesto el esfuerzo de Sony para mejorar las lecciones aprendidas durante el desarrollo, la producci?n y el lanzamiento de la PS3. Otras caracter?sticas de hardware notables de la PS4 es que incluyen 8 GB de memoria unificada GDDR5, una unidad de disco Blu-ray m?s r?pido, y los chips personalizados dedicados a tareas de procesamiento de audio, v?deo y de fondo.   Entre las nuevas aplicaciones y servicios, Sony lanz? la aplicaci?n PlayStation App, permitiendo a los que tengan una PS4 convertir los tel?fonos inteligentes y las tabletas en una segunda pantalla para mejorar la jugabilidad o en teclados externos para m?s comodidad en el momento de escribir. La compa??a tambi?n planeaba debutar con Gaikai, un servicio de juego basado en la nube que aloja contenidos y juegos descargables. Mediante la incorporacion del boton \"Share\" en el nuevo controlador hace que sea posible compartir en cualquier momento capturas de pantalla, trofeos, compras o videos en paginas como Facebook, Twitter y hacer stream de lo que se juegue y ver el de otros amigos en directo desde Ustream o Twitch, Sony plane? colocar mas énfasis en el juego social. La consola PS4 el primer d?a de su lanzamiento vendi? mas de 1 millon de consolas solo en territorio de los Estados Unidos.12 Al inicio de su conferencia de prensa en la Gamescom 2014, Sony anuncio que ya habia vendido mas de 10 000 000 unidades de la PlayStation 4 en el mundo a usuarios finales. Esta diseñada para la amplia integracion con PlayStation Vita.  ', 'imagenes/playstation 4.jpg', 'imagenes/logo play 4.jpg'),
 (5, 'Playstation', '1995-09-29', 429, 3, 'PlayStation es la primera videoconsola de Sony, y la primera de dicha compa??a en ser dise?ada por Ken Kutaragi, y es una videoconsola de sobremesa de 32 bits lanzada por Sony Computer Entertainment el 3 de diciembre de 1994 en Jap?n. Se considera la videoconsola m?s exitosa de la quinta generaci?n tanto en ventas como en popularidad. Adem?s de la original, en el a?o 2000 se lanz? la PSone (tambi?n llamado modelo slim). Tuvo gran ?xito al implantar el CD-ROM dentro de su hardware a pesar de que otras compa??as como SEGA (Sega CD), Panasonic (3DO), Philips (CD-i), SNK (Neo Geo CD), NEC (Super CD-ROM) y Atari (Atari Jaguar) ya lo hab?an empleado. Dichas compa??as tuvieron poco ?xito al utilizar el CD-ROM como soporte para almacenar juegos. Se estima que Sony pudo vender 105 500 000 unidades de su videoconsola en diez a?os. La consola fue retirada oficialmente del mercado el 23 de marzo de 2006.', 'imagenes/playstation 1.jpg', 'imagenes/play 1 logo.png'),
@@ -77,13 +124,12 @@ INSERT INTO `plataforma` (`idPlataforma`, `Nombre`, `Lanzamiento`, `Precio`, `St
 (8, 'Wii U', '2012-11-30', 299, 15, 'Wii U con nombre clave Project Caf?,9 es una consola perteneciente a la octava generaci?n de videoconsolas,10111213 siendo la s?ptima consola de sobremesa creada por Nintendo y directa sucesora de Wii.9 La consola fue lanzada el 18 de noviembre de 2012 en terreno norteamericano siendo su fecha de apertura.1415 Se present? en la conferencia de Nintendo durante el Electronic Entertainment Expo 2011 el 7 de junio de 2011.16Compet?a principalmente con la PlayStation 4 de Sony y la Xbox One de Microsoft.   Wii U es la primera consola de Nintendo en producir gr?ficos en alta definici?n hasta una resoluci?n de 1080p. Incluye un nuevo mando que incorpora una pantalla t?ctil que recibe se?al en calidad 480p de la consola, lo que permite seguir jugando incluso cuando el televisor est? apagado. A este nuevo mando se le ha denominado: Wii U GamePad. El sistema es retrocompatible con los juegos de Wii, y soporta los perif?ricos de Wii, como el Wiimote o la Wii Balance Board e incluyendo la tecnolog?a NFC,17 adem?s de que es compatible con las figuras y cartas amiibo como accesorio propio (tambi?n compatibles en la Nintendo 3DS, que modifican la forma de jugar videojuegos). Sin embargo, no es retrocompatible con los perif?ricos de Nintendo GameCube (a excepci?n del mando que se conecta mediante un adaptador) pero tiene capacidad de descargar los videojuegos desde la consola virtual.18   A finales de mayo de 2017, Nintendo ces? la fabricaci?n de la consola Wii U. El ?ltimo videojuego publicado para la consola Wii U fue The Legend of Zelda: Breath of the Wild.  ', 'imagenes/wii u.jpg', 'imagenes/Wii-u.png'),
 (9, 'Playstation 2', '2000-11-24', 450, 5, 'La PlayStation 2 (oficialmente abreviada como PS2) es la segunda videoconsola de sobremesa producida por Sony Computer Entertainment, y la tercera consola de Sony en ser dise?ada por Ken Kutaragi. Adem?s de ser la sucesora de la PlayStation.   Fue lanzada por primera vez el 4 de marzo del a?o 2000 en Jap?n, y unos meses despu?s en el resto del mundo. Es la videoconsola m?s vendida de la historia, con m?s de 160 millones de unidades vendidas. Esta consola es tambi?n la que m?s t?tulos posee, aproximadamente 3870 t?tulos, seguida por su predecesora la PlayStation con unos 2500 t?tulos. Esta cantidad de t?tulos dada la extraordinaria acogida por parte del p?blico en general hacia la misma, lo que incluso la consolid? como la consola con m?s tiempo en el mercado y a su vez la consola con m?s duraci?n en el mismo, hasta que el 3 de enero del a?o 2013 se decide detener su fabricaci?n tras 13 a?os de actividad    ', 'imagenes/playstation 2.jpg', 'imagenes/logo play 2.png'),
 (10, 'PC', '1980-04-04', 1500, 6, 'Una computadora personal, computador personal u ordenador, conocida como PC (siglas en ingles de Personal Computer), es un tipo de microcomputadora diseñada en principio para ser utilizada por una sola persona. Habitualmente, la sigla PC se refiere a las computadoras IBM PC compatibles. Una computadora personal es generalmente de tama?o medio y es usada por un solo usuario (aunque hay sistemas operativos que permiten varios usuarios simultaneamente, lo que es conocido como multiusuario). Suele denominarse ordenador de sobremesa, debido a su posicion estetica e imposibilidad de transporte a diferencia de un ordenador portatil.    Una computadora personal suele estar equipada para cumplir tareas comunes de la informatica moderna, es decir, permite navegar por Internet, estudiar, escribir textos y realizar otros trabajos de oficina o educativos, como editar textos y bases de datos, a ocho demos de actividades de ocio, como escuchar musica, ver videos, jugar, etc. En cuanto a su movilidad podemos distinguir entre computadora de escritorio y computadora portatil. ', 'imagenes/pc.jpg', 'imagenes/logo pc.png'),
-(11, 'Super Nintendo', '1992-06-12', 180, 12, 'La Super Nintendo Entertainment System, conocida popularmente como la Super Nintendo, tambi?n llamada la Super Famicom (japon?s: ?????????, Hepburn: Supa Famikon) en Jap?n7? (abreviada SFC) y la Hyundai Super Comboy (hangul: ?? ?? ???, romanizaci?n revisada: Hyeondae Syupeo Keomboi) en Corea del Sur,8? tambi?n nombrada oficialmente de forma abreviada como la Super NES o SNES en Am?rica9? y como la Super Nintendo en Europa,10? es la tercera videoconsola de sobremesa de Nintendo y la sucesora de Nintendo Entertainment System (NES) en Am?rica y Europa. Mantuvo una gran rivalidad en todo el mundo con la Sega Mega Drive (o Sega Genesis) durante la era de 16 bits. Fue descontinuada en el a?o 1999 (2003 en Jap?n)11? y a?os m?s tarde, fue relanzada virtualmente a trav?s de la Consola Virtual en la Wii en 2006, Wii U en 2013, Nintendo 3DS (solo la versi?n New) en 2016 y Nintendo Switch en 2019 (no a trav?s de la Consola Virtual, si no a trav?s del servicio en l?nea Nintendo Switch Online).    Fue la m?s exitosa y vendida de la era de los 16 bits. Gracias al chip Super FX, la SNES tuvo los primeros videojuegos totalmente tridimensionales en la consola, siendo Star Fox el primer videojuego para consola de videojuegos con gr?ficos completamente tridimensionales', 'imagenes/super nintendo.jpg', 'imagenes/super nintnedo logo.png'),
-(41, 'antonio', '0000-00-00', 40, 27, 'juego', 'imagenes/', 'imagenes/');
+(11, 'Super Nintendo', '1992-06-12', 180, 12, 'La Super Nintendo Entertainment System, conocida popularmente como la Super Nintendo, tambi?n llamada la Super Famicom (japon?s: ?????????, Hepburn: Supa Famikon) en Jap?n7? (abreviada SFC) y la Hyundai Super Comboy (hangul: ?? ?? ???, romanizaci?n revisada: Hyeondae Syupeo Keomboi) en Corea del Sur,8? tambi?n nombrada oficialmente de forma abreviada como la Super NES o SNES en Am?rica9? y como la Super Nintendo en Europa,10? es la tercera videoconsola de sobremesa de Nintendo y la sucesora de Nintendo Entertainment System (NES) en Am?rica y Europa. Mantuvo una gran rivalidad en todo el mundo con la Sega Mega Drive (o Sega Genesis) durante la era de 16 bits. Fue descontinuada en el a?o 1999 (2003 en Jap?n)11? y a?os m?s tarde, fue relanzada virtualmente a trav?s de la Consola Virtual en la Wii en 2006, Wii U en 2013, Nintendo 3DS (solo la versi?n New) en 2016 y Nintendo Switch en 2019 (no a trav?s de la Consola Virtual, si no a trav?s del servicio en l?nea Nintendo Switch Online).    Fue la m?s exitosa y vendida de la era de los 16 bits. Gracias al chip Super FX, la SNES tuvo los primeros videojuegos totalmente tridimensionales en la consola, siendo Star Fox el primer videojuego para consola de videojuegos con gr?ficos completamente tridimensionales', 'imagenes/super nintendo.jpg', 'imagenes/super nintnedo logo.png');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `productos`
+-- Table structure for table `productos`
 --
 
 CREATE TABLE `productos` (
@@ -97,7 +143,7 @@ CREATE TABLE `productos` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuario`
+-- Table structure for table `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -117,7 +163,7 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `usuario`
+-- Dumping data for table `usuario`
 --
 
 INSERT INTO `usuario` (`idUsuario`, `Usuario`, `Password`, `Nombre`, `Apellido1`, `Apellido2`, `Telefono`, `Email`, `CP`, `Provincia`, `ComunidadAutonoma`, `Rol`, `Dni`) VALUES
@@ -128,7 +174,7 @@ INSERT INTO `usuario` (`idUsuario`, `Usuario`, `Password`, `Nombre`, `Apellido1`
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `videojuego`
+-- Table structure for table `videojuego`
 --
 
 CREATE TABLE `videojuego` (
@@ -141,7 +187,7 @@ CREATE TABLE `videojuego` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `videojuego`
+-- Dumping data for table `videojuego`
 --
 
 INSERT INTO `videojuego` (`idVideojuego`, `Titulo`, `Compania`, `Publicacion`, `Descripcion`, `Imagen`) VALUES
@@ -160,32 +206,47 @@ INSERT INTO `videojuego` (`idVideojuego`, `Titulo`, `Compania`, `Publicacion`, `
 (30, 'Grand Theft Auto V', 'Rockstar Games', '2013-09-17', 'Grand Theft Auto V (abreviado como GTA V o GTA 5) es un videojuego de acci?n-aventura de mundo abierto desarrollado por el estudio Rockstar North y distribuido por Rockstar Games. Fue lanzado el 17 de septiembre de 2013 para las consolas PlayStation 3 y Xbox 360.4? Posteriormente, fue lanzado el 18 de noviembre de 2014 para las consolas de nueva generaci?n PlayStation 4 y Xbox One con mejores gr?ficos y novedades interesantes como la vista en primera persona, luego para Microsoft Windows el 14 de abril de 2015 y finalmente se confirm? su lanzamiento para PlayStation 5, Xbox Series X y Xbox Series S en la segunda mitad del 2021.5?6? Se trat? del primer gran t?tulo en la serie Grand Theft Auto desde el lanzamiento de Grand Theft Auto IV en 2008, el cual estren? la ?era HD? de la mencionada serie de videojuegos.7?', 'imagenes/gta.jpg');
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `cesta`
+-- Indexes for table `cesta`
 --
 ALTER TABLE `cesta`
   ADD PRIMARY KEY (`idCesta`),
   ADD KEY `Cesta` (`idCliente`);
 
 --
--- Indices de la tabla `item`
+-- Indexes for table `comentarioplataforma`
+--
+ALTER TABLE `comentarioplataforma`
+  ADD PRIMARY KEY (`idComentario`),
+  ADD KEY `idUsuario` (`idUsuario`),
+  ADD KEY `idPlataforma` (`idPlataforma`);
+
+--
+-- Indexes for table `comentariovideojuego`
+--
+ALTER TABLE `comentariovideojuego`
+  ADD KEY `idUsuario` (`idUsuario`),
+  ADD KEY `Videojuego` (`Videojuego`);
+
+--
+-- Indexes for table `item`
 --
 ALTER TABLE `item`
   ADD PRIMARY KEY (`idItem`),
   ADD KEY `ItemPerteneceACesta` (`idCesta`);
 
 --
--- Indices de la tabla `plataforma`
+-- Indexes for table `plataforma`
 --
 ALTER TABLE `plataforma`
   ADD PRIMARY KEY (`idPlataforma`),
   ADD UNIQUE KEY `Nombre_UNIQUE` (`Nombre`);
 
 --
--- Indices de la tabla `productos`
+-- Indexes for table `productos`
 --
 ALTER TABLE `productos`
   ADD PRIMARY KEY (`idProductos`,`IdVideojuego`,`IdPlataforma`),
@@ -193,7 +254,7 @@ ALTER TABLE `productos`
   ADD KEY `De_la_plataforma_idx` (`IdPlataforma`);
 
 --
--- Indices de la tabla `usuario`
+-- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`idUsuario`),
@@ -201,57 +262,77 @@ ALTER TABLE `usuario`
   ADD UNIQUE KEY `Usuario_UNIQUE` (`Usuario`);
 
 --
--- Indices de la tabla `videojuego`
+-- Indexes for table `videojuego`
 --
 ALTER TABLE `videojuego`
   ADD PRIMARY KEY (`idVideojuego`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `plataforma`
+-- AUTO_INCREMENT for table `comentarioplataforma`
+--
+ALTER TABLE `comentarioplataforma`
+  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `plataforma`
 --
 ALTER TABLE `plataforma`
   MODIFY `idPlataforma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
--- AUTO_INCREMENT de la tabla `productos`
+-- AUTO_INCREMENT for table `productos`
 --
 ALTER TABLE `productos`
   MODIFY `idProductos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
--- AUTO_INCREMENT de la tabla `usuario`
+-- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT de la tabla `videojuego`
+-- AUTO_INCREMENT for table `videojuego`
 --
 ALTER TABLE `videojuego`
   MODIFY `idVideojuego` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
--- Restricciones para tablas volcadas
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `cesta`
+-- Constraints for table `cesta`
 --
 ALTER TABLE `cesta`
   ADD CONSTRAINT `Cesta` FOREIGN KEY (`idCliente`) REFERENCES `usuario` (`idUsuario`);
 
 --
--- Filtros para la tabla `item`
+-- Constraints for table `comentarioplataforma`
+--
+ALTER TABLE `comentarioplataforma`
+  ADD CONSTRAINT `comentarioplataforma_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`),
+  ADD CONSTRAINT `comentarioplataforma_ibfk_2` FOREIGN KEY (`idPlataforma`) REFERENCES `plataforma` (`idPlataforma`);
+
+--
+-- Constraints for table `comentariovideojuego`
+--
+ALTER TABLE `comentariovideojuego`
+  ADD CONSTRAINT `comentariovideojuego_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`),
+  ADD CONSTRAINT `comentariovideojuego_ibfk_2` FOREIGN KEY (`Videojuego`) REFERENCES `videojuego` (`idVideojuego`);
+
+--
+-- Constraints for table `item`
 --
 ALTER TABLE `item`
   ADD CONSTRAINT `ItemPerteneceACesta` FOREIGN KEY (`idCesta`) REFERENCES `cesta` (`idCesta`);
 
 --
--- Filtros para la tabla `productos`
+-- Constraints for table `productos`
 --
 ALTER TABLE `productos`
   ADD CONSTRAINT `FK_Es_un_Videojuego` FOREIGN KEY (`IdVideojuego`) REFERENCES `videojuego` (`idVideojuego`),
