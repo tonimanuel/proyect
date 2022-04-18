@@ -86,7 +86,7 @@
 		?>
 			<div class="enviar-comentario">
 				<h2>Deja un comentario</h2>
-				<form action="videojuegosusuario.php" method="POST"> 
+				<form method="POST"> 
 					<!-- <input type="text" name="comentario"> -->
 					<textarea name="comentario"></textarea>
 					<input type="submit" name="subir-comentario" value="Enviar comentario">
@@ -105,14 +105,15 @@
 
 <div class="comentarios-dejados">
 	<?php
-	    if(isset($_POST['subir-comentario'])){
+	    if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['subir-comentario'])){
 			$pid= $idPlataforma;
 			$uid = $_SESSION['idUsuario'];
 			$comentario = $_POST['comentario'];
 			$fechaActual = date('Y-m-d');
 			$sql = "INSERT INTO `comentarioplataforma` (`comentario`, `idUsuario`, `idPlataforma`, `fecha`) VALUES ('$comentario', '$uid', '$pid', '$fechaActual')";
 			mysqli_query($conexion, $sql);
-			unset($_POST);
+			unset($pid);
+			unset($comentario);
 	
 		}
 		$id=$idPlataforma;
