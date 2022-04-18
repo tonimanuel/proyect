@@ -45,7 +45,8 @@
 	while ($fila=mysqli_fetch_array($result)) {
 
 	?>
-
+<div class="container">
+	<div class="row">
 		<div class="responsive">
 		<div class="card" id="carta-detalles" style="width: 60rem;">
 				<img class="imagen-detalles" src="<?php echo $fila['Imagen'] ?>" class="card-img-top">
@@ -75,7 +76,72 @@
 	
 </div>
 </div>
+	</div>
+	<div class="row bg-warning">
+	<div class="comentarios">
 
+<?php
+
+	if(isset($_SESSION['Usuario'])){
+		?>
+			<div class="enviar-comentario">
+				<h2>Deja un comentario</h2>
+				<form action="videojuegosusuario.php" method="POST"> 
+					<!-- <input type="text" name="comentario"> -->
+					<textarea name="comentario"></textarea>
+					<input type="submit" name="subir-comentario" value="Enviar comentario">
+				</form>
+			</div>
+		<?php
+	}else{
+		?>
+			<div class="enviar-comentario">
+				<h2>Deja un comentario</h2>
+				<h3>Inicia sesión para dejar un comentario</h3>
+			</div>
+		<?php
+	}
+?>
+
+<div class="comentarios-dejados">
+	<?php
+	    if(isset($_POST['subir-comentario'])){
+			$pid= $idPlataforma;
+			$uid = $_SESSION['idUsuario'];
+			$comentario = $_POST['comentario'];
+			$fechaActual = date('Y-m-d');
+			$sql = "INSERT INTO `comentarioplataforma` (`comentario`, `idUsuario`, `idPlataforma`, `fecha`) VALUES ('$comentario', '$uid', '$pid', '$fechaActual')";
+			mysqli_query($conexion, $sql);
+			unset($_POST);
+	
+		}
+		$id=$idPlataforma;
+		$sqll = "SELECT * FROM `comentarioplataforma` WHERE idPlataforma='$id'";
+		$sqlll = "SELECT comentario, comentarioplataforma.fecha as fecha, usuario.Nombre FROM comentarioplataforma inner join usuario on comentarioplataforma.idUsuario = usuario.idUsuario WHERE comentarioplataforma.idPlataforma = '$id'";
+		$res = mysqli_query($conexion, $sqlll);
+
+		if (mysqli_num_rows($res) > 0){
+			while($comentario = mysqli_fetch_assoc($res)){ 
+
+				?>
+					
+					<div class="mr-5">
+						
+						<header>
+						<div class="nombre"><?=$comentario['Nombre']?></div>
+							<div class="fecha"><?=$comentario['fecha']?></div>
+						</header>
+						<div class="contenido"><?=$comentario['comentario']?></div>
+					</div>
+				<?php
+			
+			}
+		}
+	?>
+</div>
+</div>
+	</div>
+</div>
 <?php include("./inc/footer.php")?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

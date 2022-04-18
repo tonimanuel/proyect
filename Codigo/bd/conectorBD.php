@@ -8,9 +8,9 @@
             $servidor = "localhost:3306";
         }
         //usuario
-        $usuario = "debianDB";
+        $usuario = "root";
         //contraseña
-        $password = "debianDB";
+        $password = "root";
         //base de datos
         $BD = "tiendaonline";
 
