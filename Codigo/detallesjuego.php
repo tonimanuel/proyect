@@ -39,7 +39,7 @@
 
 	$idVideojuego = $_GET['idVideojuego'];
 //usamos una funcion que nos permite mostrar las consolas de la base de datos
-	$result = enseñarjuegoporid($conexion,$idVideojuego);
+	$result = ensenarjuegoporid($conexion,$idVideojuego);
 
 //recorre la consulta y los muestra
 
