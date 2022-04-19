@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 18, 2022 at 10:50 PM
+-- Generation Time: Apr 19, 2022 at 10:07 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -71,6 +71,14 @@ CREATE TABLE `comentariovideojuego` (
   `Videojuego` int(11) NOT NULL,
   `fecha` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `comentariovideojuego`
+--
+
+INSERT INTO `comentariovideojuego` (`idComentario`, `comentario`, `idUsuario`, `Videojuego`, `fecha`) VALUES
+(1, 'hhhh', 10, 1, '2020-10-10'),
+(2, 'aaaa', 10, 1, '2022-04-19');
 
 -- --------------------------------------------------------
 
@@ -220,6 +228,7 @@ ALTER TABLE `comentarioplataforma`
 -- Indexes for table `comentariovideojuego`
 --
 ALTER TABLE `comentariovideojuego`
+  ADD PRIMARY KEY (`idComentario`),
   ADD KEY `idUsuario` (`idUsuario`),
   ADD KEY `Videojuego` (`Videojuego`);
 
@@ -268,6 +277,12 @@ ALTER TABLE `videojuego`
 --
 ALTER TABLE `comentarioplataforma`
   MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `comentariovideojuego`
+--
+ALTER TABLE `comentariovideojuego`
+  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `plataforma`
