@@ -1,5 +1,9 @@
 <?php
-
+function consultaUsuario($conexion,$usuario){
+    $consulta = "Select * from Usuario WHERE  Usuario = '$usuario'";
+    $resultado = mysqli_query($conexion,$consulta);
+    return $resultado;
+}
 //Funcion para ver si el usuario y la contraseña son ciertas y así poder ver sus datos
     function consultaLogin($conexion, $usuario, $password){
         $consulta = "SELECT * FROM usuario WHERE Usuario = '$usuario' AND Password = '$password'";

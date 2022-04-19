@@ -33,20 +33,20 @@
 	<div class="row">
 	    <div class="col-md-6">
 			<label class="form-label"><b>Nombre: </b></label>
-			<input type="text" name="nombre" id="nombre" class="form-control" placeholder="Ejemplo: Daniel">
+			<input type="text" name="nombre" id="nombre" class="form-control" placeholder="Ejemplo: Antonio">
 			<span id="nombre_error">El Nombre introducido no es valido</span>
 		</div>
 
 		<div class="col-md-6">
 			<label class="form-label"><b>Primer Apellido: </b></label>
-			<input type="text" name="apellido1" id="apellido1" class="form-control" placeholder="Ejemplo: Ortiz">
+			<input type="text" name="apellido1" id="apellido1" class="form-control" placeholder="Ejemplo: Antonio">
 			<span id="apellido1_error">Lo introducido no es un apellido</span>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-6">
 			<label class="form-label"><b>Segundo Apellido: </b></label>
-			<input type="text" name="apellido2" id="apellido2" class="form-control" placeholder="Ejemplo: Jimenez">
+			<input type="text" name="apellido2" id="apellido2" class="form-control" placeholder="Ejemplo: martinez">
 			<span id="apellido2_error">Lo introducido no es un apellido</span>
 		</div>
 
@@ -59,7 +59,7 @@
 	<div class="row">
 		<div class="col-md-6">
 			<label class="form-label"><b>Email: </b></label>
-			<input type="text" name="email" id="email"  class="form-control" placeholder="Ejemplo: mcmartigan3turq@gmail.com">
+			<input type="text" name="email" id="email"  class="form-control" placeholder="Ejemplo: sssss@gmail.com">
 			<span id="email_error">El email introducido no es valido</span>
 		</div>
 

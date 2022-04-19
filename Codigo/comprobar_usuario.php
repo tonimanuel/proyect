@@ -9,22 +9,28 @@
 
 //Nos conectamos a la base de datos y a la consulta
     $conexion = conectar(false);
-    $consulta = consultaLogin($conexion, $usuario, $password);
-
-//Recorre la consulta
-    if(mysqli_num_rows($consulta) == 1){
-
-        $fila = mysqli_fetch_assoc($consulta);
- 
-        crearSesion($fila);
-
-//Nos muestra los datos
-        header('Location: Home.php');
-        
-    } else {
-    	
-//Nos sale un error       
-        header('Location: login.php');
+    
+//Hacemos la consulta
+$existeUsuario = consultaLogin($conexion,$usuario,$password);
+//Hacemos la consulta del usuario para saber si no se acuerda de la contraseña
+//Comprobamos si existe el usuario
+$existeSoloUsuario=consultaUsuario($conexion, $usuario);
+if(mysqli_num_rows($existeUsuario)==1){
+    $fila = mysqli_fetch_assoc($existeUsuario);
+    foreach($fila as $atributo=>$valor){
+        echo $atributo." : ".$valor." <br>";
     }
+    crearSesion($fila);
+    header('Location: Home.php');
+}else{
+    if(mysqli_num_rows($existeSoloUsuario)==1){
+        
+        header('Location: login.php');
+    }else{
+
+        header('Location: ingresarUsuario.php');
+    }
+    
+}
 
 ?>
