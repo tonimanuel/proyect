@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 19, 2022 at 10:07 PM
+-- Generation Time: Apr 19, 2022 at 11:23 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -169,7 +169,8 @@ CREATE TABLE `usuario` (
 INSERT INTO `usuario` (`idUsuario`, `Usuario`, `Password`, `Nombre`, `Apellido1`, `Apellido2`, `Telefono`, `Email`, `CP`, `Provincia`, `ComunidadAutonoma`, `Rol`, `Dni`) VALUES
 (10, 'Administrador', '1@2Baaaa', 'Admin', 'Admin', 'Admin', '123548754', 'admin@gmail.com', '<br /', 'Melilla', 'Melilla', 'admin', '45314595K'),
 (12, 'antonio', 'Alumno2021.', 'Antonio', 'Martinez ', 'El mouanid', '606743856', 'tonimanuel4@gmail.com', '<br /', 'Melilla', 'Melilla', 'usuario', '45313662M'),
-(13, '', '', '', '', '', '', '', '', '', '', 'usuario', '');
+(13, '', '', '', '', '', '', '', '', '', '', 'usuario', ''),
+(14, 'manuel', 'Alumno2021.', 'manuel', 'martinez', 'martinez', '666475487', 'tonimanuel4@gmail.com', '52440', 'Melilla', 'Melilla', 'usuario', '45313662M');
 
 -- --------------------------------------------------------
 
@@ -288,19 +289,19 @@ ALTER TABLE `comentariovideojuego`
 -- AUTO_INCREMENT for table `plataforma`
 --
 ALTER TABLE `plataforma`
-  MODIFY `idPlataforma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `idPlataforma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `idProductos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `idProductos` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `videojuego`
