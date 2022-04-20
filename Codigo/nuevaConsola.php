@@ -24,11 +24,11 @@
 	<div class="card-body justify-content-center" id="card-html">
 	<form action="nueva_consola.php" method="POST" enctype="multipart/form-data">
 		<label><b>Nombre: </b></label><br>
-		<input type="text" name="nombre" id="nombre" class="form-control" placeholder="Ejemplo: Daniel">
+		<input type="text" name="nombre" id="nombre" class="form-control" placeholder="Ejemplo: XBOX360">
 		<span id="nombre_error">El Nombre introducido no es valido</span><br>
 
 		<label><b>Lanzamiento: </b></label><br>
-		<input type="text" name="lanzamiento"><br>
+		<input type="date" name="lanzamiento"><br>
 
 		<label><b>Precio: </b></label><br>
 		<input type="text" name="precio" id="precio" class="form-control" placeholder="Ejemplo: 40">

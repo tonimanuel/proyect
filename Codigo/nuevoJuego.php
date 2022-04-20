@@ -32,9 +32,9 @@
 		<input type="text" name="compania" id="compania" class="form-control" placeholder="Ejemplo: Nintendo">
 		<span id="compañia_error">La compañia introducida no es valida</span><br>
 
-		<label><b>Publicacion: </b></label><br>
-		<input type="text" name="publicacion"><br>	
-
+		<label><b>Fecha publicacion: </b></label><br>
+		<input type="date" name="publicacion"><br>	
+		
 		<label><b>Descripcion: </b></label>
 		<input type="text" name="descripcion"><br>
 

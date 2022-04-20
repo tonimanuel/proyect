@@ -7,7 +7,7 @@
 	$conexion = conectar(false);
 
 //Y cogemos el id de videojuegos por que lo vamos a necesitar
-	$idVideojuego = $_POST['idVideojuego'];
+	$idVideojuego = $_GET['idVideojuego'];
 	
 //Usamos una funcion que nos permite borrar un juego fijandonos en un id
 	$consulta =  borrarjuego($conexion,$idVideojuego);

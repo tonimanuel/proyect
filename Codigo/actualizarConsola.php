@@ -9,7 +9,7 @@ session_start();
 	
 //Y cogemos el id de la consola por que lo vamos a necesitar
 	$idconsola = $_GET['idconsola'];
-	$consulta = enseñarconsolaporid($conexion,$idconsola);
+	$consulta = ensenarconsolaporid($conexion,$idconsola);
 	$fila = mysqli_fetch_assoc($consulta);
 ?>
 <!DOCTYPE html>

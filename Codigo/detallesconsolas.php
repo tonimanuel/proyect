@@ -59,9 +59,21 @@
 					   		<p class="card-text" text-align="center" id="descripcion"><b> <?php echo $fila['Descripcion'] ?> </b></p>
 
 					   		<ul class="nav justify-content-end">
-							  <li class="nav-item" id="botones">
-								    <a href="filtro.php?id=<?php echo $fila['idPlataforma']?>">Ver videojuegos de <?php echo $fila['Nombre'] ?>.</a>
-							  </li>
+							  <?php
+if (isset($_SESSION['Usuario'])) {
+	
+
+							  ?>
+							  <form action="cesta.php" method="POST"> 
+								
+										<input step="1" style="color: black;" min="0" max="<?php echo $fila['Stock'] ?>" type="number">
+									
+									<input type="submit" name="anadir" value="Añadir a Carrito">
+									
+								</form>
+							  <?php
+}
+							  ?>
 							</ul>
 					   		
 		 	 		</div>

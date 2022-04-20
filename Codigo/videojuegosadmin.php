@@ -61,10 +61,10 @@
 		<td>
 			<ul class="nav justify-content-center">
 				<li class="nav-item" id="botones">
-					<a class="nav-link active" aria-current="page" href="borrar_juego.php?idconsola=<?php  echo $mostrar['idPlataforma'];?>" value="eliminar" name="eliminar" onclick="return ConfirmarEliminar()">Eliminar</a>
+					<a class="nav-link active" aria-current="page" href="borrar_juego.php?idVideojuego=<?php  echo $mostrar['idVideojuego'];?>" value="eliminar" name="eliminar" onclick="return ConfirmarEliminar()">Eliminar</a>
 				</li>
 		  		<li class="nav-item" id="botones">
-		    			<a class="nav-link active" aria-current="page" href="actualizarJuego.php?idconsola=<?php echo $mostrar['idPlataforma']; ?>" value="Modificar" name="Modificar">Modificar</a>
+		    			<a class="nav-link active" aria-current="page" href="actualizarJuego.php?idVideojuego=<?php echo $mostrar['idVideojuego']; ?>" value="Modificar" name="Modificar">Modificar</a>
 		  		</li>
 			</ul>
 		</td>
