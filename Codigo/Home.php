@@ -70,8 +70,7 @@ session_start();
 			</a>
 
 		</div>
-	</div>
-	<div class="container">
+
 		<h3 id="titulo3" class="bg-dark">Videojuegos en Stock</h3>
 		<div id="myCarousel2" class="carousel slide" data-ride="carousel">
 			<ol class="carousel-indicators">

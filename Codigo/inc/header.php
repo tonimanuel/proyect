@@ -12,7 +12,7 @@ if(empty($_SESSION['idUsuario'])){
     		
       			<ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center mx-auto">
       				<li class="nav-item">
-				    	<a class="nav-link active" aria-current="page" href="videojuegosusuario.php"> Videjuegos</a>
+				    	<a class="nav-link" aria-current="page" href="videojuegosusuario.php"> Videjuegos</a>
 				  	</li>
 				 	<li class="nav-item">
 						<a class="nav-link" href="videoconsolasusuario.php"> Videoconsolas</a>
@@ -53,7 +53,7 @@ switch($_SESSION['Rol']){
     		
       			<ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center mx-auto">
       				<li class="nav-item">
-				    	<a class="nav-link active" aria-current="page" href="videojuegosusuario.php">Videjuegos</a>
+				    	<a class="nav-link" aria-current="page" href="videojuegosusuario.php">Videjuegos</a>
 				  	</li>
 				 	<li class="nav-item">
 						<a class="nav-link" href="videoconsolasusuario.php">Videoconsolas</a>
@@ -86,7 +86,7 @@ switch($_SESSION['Rol']){
 
       			<ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
       				<li class="nav-item">
-				    	<a class="nav-link active" aria-current="page" href="videojuegosusuario.php"> Videjuegos</a>
+				    	<a class="nav-link" aria-current="page" href="videojuegosusuario.php"> Videjuegos</a>
 				  	</li>
 				 	<li class="nav-item">
 						<a class="nav-link" href="videoconsolasusuario.php"> Videoconsolas</a>
