@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 19, 2022 at 11:23 PM
+-- Generation Time: Apr 20, 2022 at 11:07 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -78,7 +78,8 @@ CREATE TABLE `comentariovideojuego` (
 
 INSERT INTO `comentariovideojuego` (`idComentario`, `comentario`, `idUsuario`, `Videojuego`, `fecha`) VALUES
 (1, 'hhhh', 10, 1, '2020-10-10'),
-(2, 'aaaa', 10, 1, '2022-04-19');
+(2, 'aaaa', 10, 1, '2022-04-19'),
+(3, 'hol', 12, 11, '2022-04-20');
 
 -- --------------------------------------------------------
 
@@ -135,9 +136,7 @@ INSERT INTO `plataforma` (`idPlataforma`, `Nombre`, `Lanzamiento`, `Precio`, `St
 CREATE TABLE `productos` (
   `idProductos` int(11) NOT NULL,
   `IdVideojuego` int(11) NOT NULL,
-  `IdPlataforma` int(11) NOT NULL,
-  `Stock` int(11) NOT NULL,
-  `Precio` varchar(45) COLLATE utf8_bin DEFAULT NULL
+  `IdPlataforma` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
@@ -204,7 +203,9 @@ INSERT INTO `videojuego` (`idVideojuego`, `Titulo`, `Compania`, `Publicacion`, `
 (10, 'World of Warcraft: Shadowlans', 'Blizzard', '2020-11-23', '10  Enfr?ntate al m?s all?   El velo entre la vida y la muerte ya no existe.      Con un ?nico acto de destrucci?n, Sylvanas Brisaveloz ha abierto el camino al m?s all?. Los defensores m?s entregados de Azeroth han acabado en una oscuridad que lo devora todo. Una antigua fuerza mortal amenaza con romper sus ataduras y deshilachar la realidad.      Reinos ocultos de maravillas y terrores esperan a aquellos que se atrevan a pasar al otro lado. Las Tierras Sombr?as albergan un reino de difuntos. Se trata de un mundo entre mundos cuyo delicado equilibro preserva la vida y la muerte.      Como adalid de Azeroth, se te ha otorgado el poder de cruzar en cuerpo y alma. Ahora debes investigar una conspiraci?n para deshacer el cosmos y ayudar a las leyendas del pasado y del presente de Warcraft a regresar a su hogar... o a cruzar al otro lado.', 'imagenes/wow shadowlands.jpg'),
 (11, 'Chrono Trigger', 'Square', '1995-03-11', '?El cla?sico juego de rol regresa cargado    de mejoras, viaja al pasado ma?s remoto, al futuro lejano y al fin de los tiempos.    Comienza una gran aventura para salvar el planeta...    Chrono Trigger es el c?lebre juego de rol creado por un magnifico equipo compuesto por Yuji Horii (DRAGON QUEST) , Akira Toriyama (Dragon Ball) y los creadores de FINAL FANTASY. A medida que avanzas en la trama, viajara?s a distintas e?pocas histo?ricas: el presente, el Medioevo, el futuro, la Prehistoria y la Antigu?edad. Esta apasionante aventura e?pica entretendra? horas y horas tanto a los entusiastas de la serie como a los jugadores noveles.    Esta es la versio?n definitiva de CHRONO TRIGGER, y en ella se han actualizado los controles y se han renovado los gra?ficos y el sonido para que tu aventura sea todavi?a ma?s agradable y divertida de jugar. Para completar tu viaje, este ti?tulo tambie?n incluye las misteriosas mazmorras \"Vo?rtice dimensional\" y \"Santuario olvidado\". Enfre?ntate a los desafi?os que te esperan y quiza?s consigas revelar secretos antiguos...    Historia    Gracias a un encuentro fortuito en la plaza de Lynne durante la Feria del milenio de Gardia, nuestro joven h?roe Chrono se encuentra con una chica llamada Marle Deciden explorar la feria juntos y alli? acuden a la exhibicio?n de una nueva tecnologi?a de teletransporte inventada por Lucca, la amiga de Crono.    A Marle le pica la curiosidad y, como no le teme a nada, se ofrece voluntaria para participar en una demostracio?n. Sin embargo, la ma?quina se estropea en el momento clave y envi?a a Marle a una dimensio?n alternativa. Crono encuentra el colgante de la chica y decide ir tras ella para salvarla, pero aparece en el pasado... Cuatrocientos an~os antes de su e?poca. Viaja al pasado ma?s remoto, al futuro lejano e incluso al fin de los tiempos. a.', 'imagenes/chrono trigger.png'),
 (28, 'Inazuma Eleven Go: ', 'Level5', '2020-11-23', 'es un videojuego de rol y deportes para Nintendo 3DS desarrollado y publicado por Level-5. Sali? a la venta el 15 de diciembre de 2011 en Jap?n y el 13 de junio de 2014 en Europa. Hay dos versiones del juego, Shine y Dark, que se lanzaron en Europa como Luz y Sombra. Una serie manga del mismo nombre basada en el juego comenz? a publicarse en la revista japonesa CoroCoro Comic, mientras que el anime basado en el juego realizado por OLM se comenz? a emitir el 14 de mayo de 2011.', 'imagenes/inazuma eleven go.jpg'),
-(30, 'Grand Theft Auto V', 'Rockstar Games', '2013-09-17', 'Grand Theft Auto V (abreviado como GTA V o GTA 5) es un videojuego de acci?n-aventura de mundo abierto desarrollado por el estudio Rockstar North y distribuido por Rockstar Games. Fue lanzado el 17 de septiembre de 2013 para las consolas PlayStation 3 y Xbox 360.4? Posteriormente, fue lanzado el 18 de noviembre de 2014 para las consolas de nueva generaci?n PlayStation 4 y Xbox One con mejores gr?ficos y novedades interesantes como la vista en primera persona, luego para Microsoft Windows el 14 de abril de 2015 y finalmente se confirm? su lanzamiento para PlayStation 5, Xbox Series X y Xbox Series S en la segunda mitad del 2021.5?6? Se trat? del primer gran t?tulo en la serie Grand Theft Auto desde el lanzamiento de Grand Theft Auto IV en 2008, el cual estren? la ?era HD? de la mencionada serie de videojuegos.7?', 'imagenes/gta.jpg');
+(30, 'Grand Theft Auto V', 'Rockstar Games', '2013-09-17', 'Grand Theft Auto V (abreviado como GTA V o GTA 5) es un videojuego de acci?n-aventura de mundo abierto desarrollado por el estudio Rockstar North y distribuido por Rockstar Games. Fue lanzado el 17 de septiembre de 2013 para las consolas PlayStation 3 y Xbox 360.4? Posteriormente, fue lanzado el 18 de noviembre de 2014 para las consolas de nueva generaci?n PlayStation 4 y Xbox One con mejores gr?ficos y novedades interesantes como la vista en primera persona, luego para Microsoft Windows el 14 de abril de 2015 y finalmente se confirm? su lanzamiento para PlayStation 5, Xbox Series X y Xbox Series S en la segunda mitad del 2021.5?6? Se trat? del primer gran t?tulo en la serie Grand Theft Auto desde el lanzamiento de Grand Theft Auto IV en 2008, el cual estren? la ?era HD? de la mencionada serie de videojuegos.7?', 'imagenes/gta.jpg'),
+(31, 'Fifa', 'EA SPORTS', '2021-10-10', 'Futbol', 'images/Fifa.jpg'),
+(32, 'fifa', 'fifa', '2022-04-06', 'futbol', '');
 
 --
 -- Indexes for dumped tables
@@ -283,7 +284,7 @@ ALTER TABLE `comentarioplataforma`
 -- AUTO_INCREMENT for table `comentariovideojuego`
 --
 ALTER TABLE `comentariovideojuego`
-  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `plataforma`
@@ -307,7 +308,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `videojuego`
 --
 ALTER TABLE `videojuego`
-  MODIFY `idVideojuego` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `idVideojuego` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- Constraints for dumped tables
