@@ -1,7 +1,22 @@
  <?php
+function consultaItem($conexion,$idCesta){
+    $consulta = "select * from Item where idCesta='$idCesta'";
+    $resultado = mysqli_query($conexion,$consulta);
+    return $resultado;
+}
 
-//Funcion que nos permite añadir un producto en nuestra base de datos
-
+//Funcion que nos permite añadir una plataforma a la cesta
+function insertarPlataformaCarrito($conexion,$idCesta,$idCliente,$idItem,$Cantidad,$PrecioItem,$idProducto){
+    $consulta = "INSERT IGNORE Cesta(idCesta, idCliente) values ('$idCesta','$idCliente')";
+    $resultado = mysqli_query($conexion,$consulta);
+    $consulta2="INSERT INTO Item (idItem, Cantidad, PrecioItem, idCesta) values ('$idItem','$Cantidad','$PrecioItem','$idCesta')";
+    $resultado2=mysqli_query($conexion,$consulta2);
+    $consulta3="update plataforma set Stock=Stock-$Cantidad where idPlataforma='$idProducto'";
+    $resultado3=mysqli_query($conexion,$consulta3);
+    $consulta4="Update Cesta set PrecioTotal=PrecioTotal+($PrecioItem*$Cantidad) where idCesta='$idCesta'";
+    $resultado4=mysqli_query($conexion,$consulta4);
+    
+}
     function insertarproducto($conexion,$idvideojuego,$idplataforma,$stock,$precio){
         $consulta = "INSERT INTO `tiendaonline`.`productos` (`IdVideojuego`, `IdPlataforma`, `Stock`, `Precio`) VALUES ('$idvideojuego', '$idplataforma', '$stock', '$precio')";
         $resultado = mysqli_query($conexion, $consulta);

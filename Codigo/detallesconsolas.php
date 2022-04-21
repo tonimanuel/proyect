@@ -65,11 +65,10 @@ if (isset($_SESSION['Usuario'])) {
 
 							  ?>
 							  <form action="cesta.php" method="POST"> 
-								
-										<input step="1" style="color: black;" min="0" max="<?php echo $fila['Stock'] ?>" type="number">
-									
-									<input type="submit" name="anadir" value="Añadir a Carrito">
-									
+							  		<input type="hidden" name="PrecioC" value="<?php echo $fila['Precio'] ?>">
+								  	<input type="hidden" name="idConsola" value="<?php echo $fila['idPlataforma'] ?>">
+									<input step="1" name="cantidadC" style="color: black;" min="0" max="<?php echo $fila['Stock'] ?>" type="number">
+									<input type="submit" name="anadirConsola" value="Añadir a Carrito">
 								</form>
 							  <?php
 }
