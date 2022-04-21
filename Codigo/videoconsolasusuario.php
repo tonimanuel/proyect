@@ -12,11 +12,11 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 	
-<body>
+<body style="background-color: #a3b2aa;">
 
 <?php include("./inc/header.php")?>
 
-<div class="container-fluid row justify-content-center">
+<div class="container-fluid row justify-content-center" >
 
 
 
@@ -39,7 +39,7 @@
 
 	?>
 
-	<div class="card col-6 col-md-4 col-xl-3" id="carta-catalogo">
+	<div class="card col-6 col-md-4 col-xl-3 bg-dark" id="carta-catalogo">
 		  		<img class="imagen-catalogo card-img-top" src="<?php echo $mostrar['Imagen']; ?>">
 		  			<div class="card-body">
 			    		<h5 class="card-title"><b> <?php echo $mostrar['Nombre']; ?> </b></h5><br>

@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 	<link rel="shortcut icon" href="https://phantom-elmundo.unidadeditorial.es/83767bb5c3c8513f007663ca38fa7c70/resize/746/f/jpg/assets/multimedia/imagenes/2020/04/13/15868039822868.jpg">
-<body>
+<body style="background-color: #a3b2aa;">
 
 <?php include("./inc/header.php")?>
 
@@ -38,7 +38,7 @@
 
 			?>
 
-				<div class="card col-6 col-md-4 col-xl-3" id="carta-catalogo">
+				<div class="card col-6 col-md-4 col-xl-3 bg-dark" id="carta-catalogo">
 					<img class="imagen-catalogo card-img-top" src="<?php echo $mostrar['Imagen'] ?>">
 
 					<div class="card-body" text-align="center">

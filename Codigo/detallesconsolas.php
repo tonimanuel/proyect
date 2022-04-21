@@ -48,9 +48,9 @@
 <div class="container">
 	<div class="row">
 		<div class="responsive">
-		<div class="card" id="carta-detalles" style="width: 60rem;">
+		<div class="card bg-dark" id="carta-detalles" style="width: 60rem;">
 				<img class="imagen-detalles" src="<?php echo $fila['Imagen'] ?>" class="card-img-top">
-		  			<div class="card-body" text-align="center">
+		  			<div class="card-body" text-align="center" style="color: #a3b2aa;">
 			    		<h5 class="card-title" text-align="center" id="titulo3"><b> <?php echo $fila['Nombre'] ?> </b></h5>
 					   		<p class="card-text" text-align="center"  id="compañiaypublicacion">Lanzamiento: <b> <?php echo $fila['Lanzamiento'] ?> </b></p>
 					   		<p class="card-text" text-align="center"  id="compañiaypublicacion">Precio: <b> <?php echo $fila['Precio'] ?> </b></p>
@@ -89,7 +89,7 @@ if (isset($_SESSION['Usuario'])) {
 </div>
 </div>
 	</div>
-	<div class="row bg-warning">
+	<div class="row">
 	<div class="comentarios">
 
 <?php
@@ -100,8 +100,10 @@ if (isset($_SESSION['Usuario'])) {
 				<h2>Deja un comentario</h2>
 				<form method="POST"> 
 					<!-- <input type="text" name="comentario"> -->
-					<textarea name="comentario"></textarea>
-					<input type="submit" name="subir-comentario" value="Enviar comentario">
+					<div class="form-group">
+						<textarea class="form-control" name="comentario" id="exampleFormControlTextarea1" rows="3"></textarea>
+					</div>
+					<input type="submit" style="color: #a3b2aa; font-size:20px;" class="col-12 bg-dark" name="subir-comentario" value="Enviar comentario">
 				</form>
 			</div>
 		<?php

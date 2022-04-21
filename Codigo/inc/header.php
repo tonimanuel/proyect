@@ -12,10 +12,10 @@ if(empty($_SESSION['idUsuario'])){
     		
       			<ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center mx-auto">
       				<li class="nav-item">
-				    	<a class="nav-link" aria-current="page" href="videojuegosusuario.php"> Videjuegos</a>
+				    	<a class="nav-link" aria-current="page" style="color: #a3b2aa;" href="videojuegosusuario.php"> Videjuegos</a>
 				  	</li>
 				 	<li class="nav-item">
-						<a class="nav-link" href="videoconsolasusuario.php"> Videoconsolas</a>
+						<a class="nav-link" style="color: #a3b2aa;" href="videoconsolasusuario.php"> Videoconsolas</a>
 				  	</li>
         			
       			</ul>
@@ -53,10 +53,10 @@ switch($_SESSION['Rol']){
     		
       			<ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center mx-auto">
       				<li class="nav-item">
-				    	<a class="nav-link" aria-current="page" href="videojuegosusuario.php">Videjuegos</a>
+				    	<a class="nav-link" aria-current="page" style="color: #a3b2aa;" href="videojuegosusuario.php">Videjuegos</a>
 				  	</li>
 				 	<li class="nav-item">
-						<a class="nav-link" href="videoconsolasusuario.php">Videoconsolas</a>
+						<a class="nav-link" style="color: #a3b2aa;" href="videoconsolasusuario.php">Videoconsolas</a>
 				  	</li>
 				  	<li class="nav-item">
 						<a class="nav-link" href="perfil.php">Perfil</a>
@@ -65,7 +65,7 @@ switch($_SESSION['Rol']){
 
       			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
       				<li class="nav-item">
-        				<a class="nav-link" href="logout.php">Desconectar</a>
+        				<a class="nav-link" style="color: #a3b2aa;" href="logout.php">Desconectar</a>
         			</li>
       			</ul>
     		</div>
@@ -86,27 +86,27 @@ switch($_SESSION['Rol']){
 
       			<ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
       				<li class="nav-item">
-				    	<a class="nav-link" aria-current="page" href="videojuegosusuario.php"> Videjuegos</a>
+				    	<a class="nav-link" aria-current="page" style="color: #a3b2aa;" href="videojuegosusuario.php"> Videjuegos</a>
 				  	</li>
 				 	<li class="nav-item">
-						<a class="nav-link" href="videoconsolasusuario.php"> Videoconsolas</a>
+						<a class="nav-link" style="color: #a3b2aa;" href="videoconsolasusuario.php"> Videoconsolas</a>
 				  	</li>
         			<li class="nav-item dropdown">
-          				<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+          				<a class="nav-link dropdown-toggle" style="color: #a3b2aa;" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
             			Administración
           				</a>
-          				<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            				<li><a class="dropdown-item" href="videoconsolasadmin.php">Videoconsolas</a></li>
-            				<li><a class="dropdown-item" href="videojuegosadmin.php">Videojuegos</a></li>
-            				<li><a class="dropdown-item" href="panel.php">Panel de Usuarios</a></li>
-            				<li><a class="dropdown-item" href="productosadmin.php">Productos</a></li>
+          				<ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+            				<li><a class="dropdown-item" style="color: #a3b2aa;" href="videoconsolasadmin.php">Videoconsolas</a></li>
+            				<li><a class="dropdown-item" style="color: #a3b2aa;" href="videojuegosadmin.php">Videojuegos</a></li>
+            				<li><a class="dropdown-item" style="color: #a3b2aa;" href="panel.php">Panel de Usuarios</a></li>
+            				<li><a class="dropdown-item" style="color: #a3b2aa;" href="productosadmin.php">Productos</a></li>
       					</ul>
         			</li>
       			</ul>
 
       			<ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-end">
       				<li class="nav-item">
-        				<a class="nav-link" href="logout.php">Desconectar</a>
+        				<a class="nav-link" style="color: #a3b2aa;" href="logout.php">Desconectar</a>
         			</li>
       			</ul>
     		</div>
