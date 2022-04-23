@@ -48,6 +48,12 @@ if (isset($_POST['anadirConsola'])) {
     $idItem=intval($idItemIndicador);
     $resul=insertarPlataformaCarrito($conexion,$_SESSION['idUsuario'],$_SESSION['idUsuario'],$idItem,$_POST['cantidadC'],$_POST['PrecioC'],$_POST['idConsola']);
 }
+if (isset($_POST['anadirJuego'])) {
+    $long= strval(strlen($_POST['idJuego']));
+    $idItemIndicador = str_pad($_POST['idJuego'], $long+1, "1", STR_PAD_RIGHT);
+    $idItem=intval($idItemIndicador);
+    $resul=insertarJuegoCarrito($conexion,$_SESSION['idUsuario'],$_SESSION['idUsuario'],$idItem,$_POST['cantidadJ'],$_POST['PrecioJ'],$_POST['idJuego']);
+}
 $carr=consultaItem($conexion,$_SESSION['idUsuario']);
 while ($filas=mysqli_fetch_assoc($carr)) {
     $tipo=sacarTipo($filas['idItem']);
@@ -75,8 +81,55 @@ while ($filas=mysqli_fetch_assoc($carr)) {
   </div>
 </div>
 
+<?php  }elseif($tipo==1){
+        $jue=ensenarjuegoporid($conexion,$id);
+        $juego=mysqli_fetch_assoc($jue);
+
+
+        
+    ?>
+<div class="card mb-12" >
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="<?php echo $juego['Imagen'] ?>">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><?php echo $juego['Titulo'] ?></h5>
+        
+        <p class="card-text"><b>Precio: </b><?php echo $juego['Precio'] ?><b> Euros X <?php echo $filas['Cantidad'] ?></b><b>=</b><?php echo $juego['Precio']*$filas['Cantidad']; ?><b> Euros</b></p>
+        <p class="card-text"><form action="cesta.php" method="POST"><label for="cantida">Cantidad: </label><input type="hidden" name="idItem" value="<?php echo $filas['idItem']; ?>"><input type="hidden" name="idCesta" value="<?php echo $_SESSION['idUsuario'] ?>"><input type="number" name="cantidad"> <input type="submit" value="Cambiar" name="cambiarC"></form></p>
+        <form action="detallesjuego.php" method="post">
+            <input type="hidden" name="idItem"  value="<?php echo $filas['id']; ?>">
+            <input type="hidden" name="idCesta"  value="<?php echo $_SESSION['idUsuario']; ?>">
+            <input type="hidden" name="precioElim"  value="<?php echo $filas['PrecioItem']; ?>">
+            <input type="hidden" name="cantidadEli"  value="<?php echo $filas['Cantidad']; ?>">
+            <input type="hidden" name="idJuego" value="<?php echo $juego['idVideojuego']; ?>">
+            <input type="submit" value="Eliminar" name="eliminarJue">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 <?php  }
 }
+$cest=consultaPrecioCesta($conexion,$_SESSION['idUsuario']);
+if (mysqli_num_rows($cest)) {
+    $cestaPre=mysqli_fetch_assoc($cest);
+?>
+<div class="card mb-12" >
+  <div class="row no-gutters">
+
+      <div class="card-body">
+        <h5 class="card-title"><?php echo $cestaPre['PrecioTotal'] ?> Euros</h5>
+  
+      </div>
+  </div>
+</div>
+<?php
+}
+
 ?>
 
     

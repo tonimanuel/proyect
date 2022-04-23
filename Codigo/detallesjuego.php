@@ -55,13 +55,26 @@
 					   		<p class="card-text" text-align="center"  id="compañiaypublicacion"><b> <?php echo $fila['Compania'] ?> </b></p>
 					   		<p class="card-text" text-align="center"  id="compañiaypublicacion"><b> <?php echo $fila['Publicacion'] ?> </b></p>
 					   		<p class="card-text" text-align="center" id="descripcion"><b> <?php echo $fila['Descripcion'] ?> </b></p>
+							<p class="card-text" text-align="center" id=""><b> <?php echo $fila['Stock'] ?> Unidades</b></p>
+						    <p class="card-text" text-align="center" id=""><b> <?php echo $fila['Precio'] ?> Euros</b></p>
 					   		
 		 	 		</div>
 		 	 			
 		 	 		<ul class="nav justify-content-end">
-							  <li class="nav-item" id="botones">
-								    <a href="filtro1.php?id=<?php echo $fila['idVideojuego']?>">Ver consolas disponibles para <?php echo $fila['Titulo'] ?>.</a>
-							  </li>
+					  <?php
+if (isset($_SESSION['Usuario'])) {
+	
+
+							  ?>
+							  <form action="cesta.php" method="POST"> 
+							  		<input type="hidden" name="PrecioJ" value="<?php echo $fila['Precio'] ?>">
+								  	<input type="hidden" name="idJuego" value="<?php echo $fila['idVideojuego'] ?>">
+									<input step="1" name="cantidadJ" style="color: black;" min="1" max="<?php echo $fila['Stock'] ?>" type="number">
+									<input type="submit" name="anadirJuego" value="Añadir a Carrito">
+								</form>
+							  <?php
+}
+							  ?>
 					</ul>
 
 		</div>
@@ -135,6 +148,13 @@
 				<?php
 			
 			}
+		}
+		if (isset($_POST['eliminarJue'])) {
+			$resulElimJue=eliminarJuegoCesta($conexion,$_POST['idItem'],$_POST['idJuego'],$_POST['precioElim'],$_POST['cantidadEli'],$_POST['idCesta']);
+			if ($resulElimJue) {
+				header('Location: cesta.php');
+			}
+		
 		}
 	?>
 </div>

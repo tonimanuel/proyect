@@ -17,6 +17,29 @@ function insertarPlataformaCarrito($conexion,$idCesta,$idCliente,$idItem,$Cantid
     $resultado4=mysqli_query($conexion,$consulta4);
     
 }
+
+//Funcion que añade un videojuego al carrito
+function insertarJuegoCarrito($conexion,$idCesta,$idCliente,$idItem,$Cantidad,$PrecioItem,$idProducto){
+    $consulta = "INSERT IGNORE Cesta(idCesta, idCliente) values ('$idCesta','$idCliente')";
+    $resultado = mysqli_query($conexion,$consulta);
+    $consulta2="INSERT INTO Item (idItem, Cantidad, PrecioItem, idCesta) values ('$idItem','$Cantidad','$PrecioItem','$idCesta')";
+    $resultado2=mysqli_query($conexion,$consulta2);
+    $consulta3="update videojuego set Stock=Stock-$Cantidad where idVideojuego='$idProducto'";
+    $resultado3=mysqli_query($conexion,$consulta3);
+    $consulta4="Update Cesta set PrecioTotal=PrecioTotal+($PrecioItem*$Cantidad) where idCesta='$idCesta'";
+    $resultado4=mysqli_query($conexion,$consulta4);
+    
+}
+//Funcion que elimina un juego de la cesta en la base de datos
+function eliminarJuegoCesta($conexion,$idItem,$idJuego,$precio,$cantidad,$idCesta){
+    $consulta = "DELETE FROM item WHERE `item`.`id` = $idItem";
+    $resultado = mysqli_query($conexion, $consulta);
+    $consulta1 = "UPDATE `cesta` SET `PrecioTotal` = PrecioTotal-($cantidad*$precio)  WHERE `cesta`.`idCesta` = $idCesta";
+    $resultado1 = mysqli_query($conexion, $consulta1);
+    $consulta2 = "UPDATE `videojuego` SET `Stock` = $cantidad WHERE `videojuego`.`idVideojuego` = $idJuego";
+    $resultado2 = mysqli_query($conexion, $consulta2);
+    return $resultado;
+}
     function insertarproducto($conexion,$idvideojuego,$idplataforma,$stock,$precio){
         $consulta = "INSERT INTO `tiendaonline`.`productos` (`IdVideojuego`, `IdPlataforma`, `Stock`, `Precio`) VALUES ('$idvideojuego', '$idplataforma', '$stock', '$precio')";
         $resultado = mysqli_query($conexion, $consulta);
@@ -24,7 +47,11 @@ function insertarPlataformaCarrito($conexion,$idCesta,$idCliente,$idItem,$Cantid
     }
 
 //Funcion que nos permite borrar un producto en nuestra base de datos
-
+function consultaPrecioCesta($conexion,$idCesta){
+    $consulta = "SELECT PrecioTotal from cesta WHERE idCesta=$idCesta";
+    $resultado = mysqli_query($conexion, $consulta);
+    return $resultado;
+}
     function borrarproducto($conexion,$idproductos){
         $consulta = "DELETE FROM `tiendaonline`.`productos` WHERE (`idProductos` = '$idproductos')";
         $resultado = mysqli_query($conexion, $consulta);
