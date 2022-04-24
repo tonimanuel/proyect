@@ -67,9 +67,9 @@ if (isset($_SESSION['Usuario'])) {
 
 							  ?>
 							  <form action="cesta.php" method="POST"> 
-							  		<input type="hidden" name="PrecioJ" value="<?php echo $fila['Precio'] ?>">
-								  	<input type="hidden" name="idJuego" value="<?php echo $fila['idVideojuego'] ?>">
-									<input step="1" name="cantidadJ" style="color: black;" min="1" max="<?php echo $fila['Stock'] ?>" type="number">
+							  		<input type="hidden" name="PrecioJ" value="<?php echo $fila['Precio']; ?>">
+								  	<input type="hidden" name="idJuego" value="<?php echo $fila['idVideojuego']; ?>">
+									<input step="1" name="cantidadJ" style="color: black;" min="1" max="<?php echo $fila['Stock']; ?>" type="number">
 									<input type="submit" name="anadirJuego" value="Añadir a Carrito">
 								</form>
 							  <?php

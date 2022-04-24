@@ -65,7 +65,7 @@ if (isset($_SESSION['Usuario'])) {
 
 							  ?>
 							  <form action="cesta.php" method="POST"> 
-							  		<input type="hidden" name="PrecioC" value="<?php echo $fila['Precio'] ?>">
+							  		<input type="hidden" name="PrecioC" value="<?php echo $fila['Precio']; ?>">
 								  	<input type="hidden" name="idConsola" value="<?php echo $fila['idPlataforma'] ?>">
 									<input step="1" name="cantidadC" style="color: black;" min="0" max="<?php echo $fila['Stock'] ?>" type="number">
 									<input type="submit" name="anadirConsola" value="Añadir a Carrito">
@@ -150,6 +150,13 @@ if (isset($_SESSION['Usuario'])) {
 				<?php
 			
 			}
+		}
+		if (isset($_POST['eliminarPla'])) {
+			$resulElimJue=eliminarPlataformaCesta($conexion,$_POST['idItem'],$_POST['idConsola'],$_POST['precioElim'],$_POST['cantidadEli'],$_POST['idCesta']);
+			if ($resulElimJue) {
+				header('Location: cesta.php');
+			}
+		
 		}
 	?>
 </div>

@@ -67,6 +67,9 @@ switch($_SESSION['Rol']){
       				<li class="nav-item">
         				<a class="nav-link" style="color: #a3b2aa;" href="logout.php">Desconectar</a>
         			</li>
+					<li class="nav-item">
+						<a href="cesta.php"><img src="imagenes/carrito.png" style="width: 50px; height: 50px; color:#a3b2aa;"></a>
+        			</li>
       			</ul>
     		</div>
   		</div>
@@ -107,7 +110,12 @@ switch($_SESSION['Rol']){
       			<ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-end">
       				<li class="nav-item">
         				<a class="nav-link" style="color: #a3b2aa;" href="logout.php">Desconectar</a>
+
         			</li>
+					<li class="nav-item">
+						<a href="cesta.php"><img src="imagenes/carrito.png" style="width: 50px; height: 50px;"></a>
+        			</li>
+					
       			</ul>
     		</div>
   		</div>
