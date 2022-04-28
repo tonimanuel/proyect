@@ -13,9 +13,10 @@ function insertarPlataformaCarrito($conexion,$idCesta,$idCliente,$idItem,$Cantid
     $resultado2=mysqli_query($conexion,$consulta2);
     $consulta3="update plataforma set Stock=Stock-$Cantidad where idPlataforma='$idProducto'";
     $resultado3=mysqli_query($conexion,$consulta3);
-    $consulta4="Update Cesta set PrecioTotal=PrecioTotal+($PrecioItem*$Cantidad) where idCesta='$idCesta'";
+    $precioT=$PrecioItem*$Cantidad;
+    $consulta4="UPDATE `cesta` SET `PrecioTotal`=`PrecioTotal`+$precioT where `cesta`.`idCesta` = $idCesta";
     $resultado4=mysqli_query($conexion,$consulta4);
-    return $resultado;
+    return $resultado4;
 }
 
 //Funcion que añade un videojuego al carrito
@@ -26,7 +27,8 @@ function insertarJuegoCarrito($conexion,$idCesta,$idCliente,$idItem,$Cantidad,$P
     $resultado2=mysqli_query($conexion,$consulta2);
     $consulta3="update videojuego set Stock=Stock-$Cantidad where idVideojuego='$idProducto'";
     $resultado3=mysqli_query($conexion,$consulta3);
-    $consulta4="Update Cesta set PrecioTotal=PrecioTotal+($PrecioItem*$Cantidad) where cesta.idCesta='$idCesta'";
+    $precioT=floatval($PrecioItem*$Cantidad);
+    $consulta4="UPDATE `cesta` SET `PrecioTotal`=`PrecioTotal`+$precioT WHERE `cesta`.`idCesta` = $idCesta";
     $resultado4=mysqli_query($conexion,$consulta4);
     return $resultado;
 }
@@ -49,12 +51,6 @@ function eliminarPlataformaCesta($conexion,$idItem,$idPlataforma,$precio,$cantid
     $resultado2 = mysqli_query($conexion, $consulta2);
     return $resultado;
 }
-    function insertarproducto($conexion,$idvideojuego,$idplataforma,$stock,$precio){
-        $consulta = "INSERT INTO `tiendaonline`.`productos` (`IdVideojuego`, `IdPlataforma`, `Stock`, `Precio`) VALUES ('$idvideojuego', '$idplataforma', '$stock', '$precio')";
-        $resultado = mysqli_query($conexion, $consulta);
-        return $resultado;
-    }
-
 //Funcion que nos permite borrar un producto en nuestra base de datos
 function consultaPrecioCesta($conexion,$idCesta){
     $consulta = "SELECT PrecioTotal from cesta WHERE idCesta=$idCesta";
