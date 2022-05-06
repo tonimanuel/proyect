@@ -10,7 +10,7 @@
 
 //Funcion que nos permite borrar una consola en nuestra base de datos
     function borrarconsola($conexion,$idconsola){
-        $consulta = "DELETE FROM `tiendaonline`.`plataforma` WHERE (`idPlataforma` = '$idconsola')";
+        $consulta = "DELETE FROM `tiendaonline`.`plataforma` WHERE `idPlataforma` = '$idconsola'";
         $resultado = mysqli_query($conexion, $consulta);
         return $resultado;
     }
@@ -38,13 +38,13 @@
 
 //Funcion que nos permite mostrar los datos de una consola por su id
      function ensenarconsolaporid($conexion,$idPlataforma){
-        $consulta = "SELECT * FROM `plataforma` WHERE (`idPlataforma` = '$idPlataforma')";
+        $consulta = "SELECT * FROM `plataforma` WHERE `idPlataforma` = '$idPlataforma'";
         $resultado = mysqli_query($conexion, $consulta);
         return $resultado;
     }
 
       function logo($conexion,$idPlataforma){
-        $consulta = "SELECT `Logo` FROM `plataforma` WHERE (`idPlataforma` = '$idPlataforma')";
+        $consulta = "SELECT `Logo` FROM `plataforma` WHERE `idPlataforma` = '$idPlataforma'";
         $resultado = mysqli_query($conexion, $consulta);
         return $resultado;
     }

@@ -8,7 +8,7 @@ session_start();
 //Y cogemos el id de videojuegos por que lo vamos a necesitar
 	$idVideojuego = $_GET['idVideojuego'];
 //la funcion la paso a una consulta y despues obtenemos los valores	
-	$consulta = enseñarjuegoporid($conexion,$idVideojuego);
+	$consulta = ensenarjuegoporid($conexion,$idVideojuego);
 	$fila = mysqli_fetch_assoc($consulta);
 ?>
 <!DOCTYPE html>
