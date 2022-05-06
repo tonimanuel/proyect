@@ -7,11 +7,11 @@ function consultaItem($conexion,$idCesta){
 
 //Funcion que nos permite añadir una plataforma a la cesta
 function insertarPlataformaCarrito($conexion,$idCesta,$idCliente,$idItem,$Cantidad,$PrecioItem,$idProducto){
-    $consulta = "INSERT IGNORE Cesta(idCesta, idCliente) values ('$idCesta','$idCliente')";
+    $consulta = "INSERT IGNORE Cesta(idCesta, idCliente) values ($idCesta,$idCliente)";
     $resultado = mysqli_query($conexion,$consulta);
-    $consulta2="INSERT INTO Item (idItem, Cantidad, PrecioItem, idCesta) values ('$idItem','$Cantidad','$PrecioItem','$idCesta')";
+    $consulta2="INSERT INTO Item (idItem, Cantidad, PrecioItem, idCesta) values ($idItem,$Cantidad,$PrecioItem,$idCesta)";
     $resultado2=mysqli_query($conexion,$consulta2);
-    $consulta3="update plataforma set Stock=Stock-$Cantidad where idPlataforma='$idProducto'";
+    $consulta3="update plataforma set Stock=Stock-$Cantidad where idPlataforma=$idProducto";
     $resultado3=mysqli_query($conexion,$consulta3);
     $precioT=$PrecioItem*$Cantidad;
     $consulta4="UPDATE `cesta` SET `PrecioTotal`=`PrecioTotal`+$precioT where `cesta`.`idCesta` = $idCesta";
@@ -21,11 +21,11 @@ function insertarPlataformaCarrito($conexion,$idCesta,$idCliente,$idItem,$Cantid
 
 //Funcion que añade un videojuego al carrito
 function insertarJuegoCarrito($conexion,$idCesta,$idCliente,$idItem,$Cantidad,$PrecioItem,$idProducto){
-    $consulta = "INSERT IGNORE Cesta(idCesta, idCliente) values ('$idCesta','$idCliente')";
+    $consulta = "INSERT IGNORE Cesta(idCesta, idCliente) values ($idCesta,$idCliente)";
     $resultado = mysqli_query($conexion,$consulta);
-    $consulta2="INSERT INTO Item (idItem, Cantidad, PrecioItem, idCesta) values ('$idItem','$Cantidad','$PrecioItem','$idCesta')";
+    $consulta2="INSERT INTO Item (idItem, Cantidad, PrecioItem, idCesta) values ($idItem,$Cantidad,$PrecioItem,$idCesta)";
     $resultado2=mysqli_query($conexion,$consulta2);
-    $consulta3="update videojuego set Stock=Stock-$Cantidad where idVideojuego='$idProducto'";
+    $consulta3="update videojuego set Stock=Stock-$Cantidad where idVideojuego=$idProducto";
     $resultado3=mysqli_query($conexion,$consulta3);
     $precioT=floatval($PrecioItem*$Cantidad);
     $consulta4="UPDATE `cesta` SET `PrecioTotal`=`PrecioTotal`+$precioT WHERE `cesta`.`idCesta` = $idCesta";
