@@ -1,6 +1,6 @@
  <?php
 function consultaItem($conexion,$idCesta){
-    $consulta = "select * from Item where idCesta='$idCesta'";
+    $consulta = "select * from item where idCesta='$idCesta'";
     $resultado = mysqli_query($conexion,$consulta);
     return $resultado;
 }
