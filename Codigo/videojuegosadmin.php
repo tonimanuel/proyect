@@ -17,7 +17,7 @@
 
 <div class="container-fluid">
 	<div class="nav justify-content-center" id="botones">
-		<a class="nav-item nav-link" aria-current="page" href="nuevojuego.php">Nuevo Juego</a>
+		<a class="nav-item nav-link" aria-current="page" href="nuevoJuego.php">Nuevo Juego</a>
 	</div>
 	<table border="1" class="table table-dark">
 
