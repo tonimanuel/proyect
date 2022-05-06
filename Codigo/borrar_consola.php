@@ -7,7 +7,7 @@
 	$conexion = conectar(false);
 
 //Y cogemos el id de consola por que lo vamos a necesitar
-	$idPlataforma = $_GET['idPlataforma'];
+	$idPlataforma = $_GET['idconsola'];
 	
 //Usamos una funcion que nos permite borrar una consola fijandonos en un id
 	$consulta = borrarconsola($conexion,$idPlataforma);
