@@ -7,47 +7,47 @@ function consultaItem($conexion,$idCesta){
 
 //Funcion que nos permite añadir una plataforma a la cesta
 function insertarPlataformaCarrito($conexion,$idCesta,$idCliente,$idItem,$Cantidad,$PrecioItem,$idProducto){
-    $consulta = "INSERT IGNORE cesta(idCesta, idCliente) values ($idCesta,$idCliente)";
+    $consulta = "INSERT IGNORE cesta(idCesta, idCliente) values ('$idCesta','$idCliente')";
     $resultado = mysqli_query($conexion,$consulta);
-    $consulta2="INSERT INTO item (idItem, Cantidad, PrecioItem, idCesta) values ($idItem,$Cantidad,$PrecioItem,$idCesta)";
+    $consulta2="INSERT INTO item (idItem, Cantidad, PrecioItem, idCesta) values ('$idItem','$Cantidad','$PrecioItem','$idCesta')";
     $resultado2=mysqli_query($conexion,$consulta2);
-    $consulta3="update plataforma set Stock=Stock-$Cantidad where idPlataforma=$idProducto";
+    $consulta3="update plataforma set Stock=Stock-$Cantidad where idPlataforma='$idProducto'";
     $resultado3=mysqli_query($conexion,$consulta3);
     $precioT=$PrecioItem*$Cantidad;
-    $consulta4="UPDATE `cesta` SET `PrecioTotal`=`PrecioTotal`+$precioT where `cesta`.`idCesta` = $idCesta";
+    $consulta4="UPDATE `cesta` SET `PrecioTotal`=`PrecioTotal`+$precioT where `cesta`.`idCesta`='$idCesta'";
     $resultado4=mysqli_query($conexion,$consulta4);
     return $resultado4;
 }
 
 //Funcion que añade un videojuego al carrito
 function insertarJuegoCarrito($conexion,$idCesta,$idCliente,$idItem,$Cantidad,$PrecioItem,$idProducto){
-    $consulta = "INSERT IGNORE cesta(idCesta, idCliente) values ($idCesta,$idCliente)";
+    $consulta = "INSERT IGNORE cesta(idCesta, idCliente) values ('$idCesta','$idCliente')";
     $resultado = mysqli_query($conexion,$consulta);
-    $consulta2="INSERT INTO item (idItem, Cantidad, PrecioItem, idCesta) values ($idItem,$Cantidad,$PrecioItem,$idCesta)";
+    $consulta2="INSERT INTO item (idItem, Cantidad, PrecioItem, idCesta) values ('$idItem','$Cantidad','$PrecioItem','$idCesta')";
     $resultado2=mysqli_query($conexion,$consulta2);
-    $consulta3="update videojuego set Stock=Stock-$Cantidad where idVideojuego=$idProducto";
+    $consulta3="update videojuego set Stock=Stock-$Cantidad where idVideojuego='$idProducto'";
     $resultado3=mysqli_query($conexion,$consulta3);
     $precioT=floatval($PrecioItem*$Cantidad);
-    $consulta4="UPDATE `cesta` SET `PrecioTotal`=`PrecioTotal`+$precioT WHERE `cesta`.`idCesta` = $idCesta";
+    $consulta4="UPDATE `cesta` SET PrecioTotal=PrecioTotal+$precioT WHERE `cesta`.`idCesta`='$idCesta'";
     $resultado4=mysqli_query($conexion,$consulta4);
     return $resultado;
 }
 //Funcion que elimina un juego de la cesta en la base de datos
 function eliminarJuegoCesta($conexion,$idItem,$idJuego,$precio,$cantidad,$idCesta){
-    $consulta = "DELETE FROM item WHERE `item`.`id` = $idItem";
+    $consulta = "DELETE FROM item WHERE id=$idItem";
     $resultado = mysqli_query($conexion, $consulta);
-    $consulta1 = "UPDATE `cesta` SET `PrecioTotal` = PrecioTotal-($cantidad*$precio)  WHERE `cesta`.`idCesta` = $idCesta";
+    $consulta1 = "UPDATE cesta SET PrecioTotal=PrecioTotal-$cantidad*$precio WHERE idCesta='$idCesta'";
     $resultado1 = mysqli_query($conexion, $consulta1);
-    $consulta2 = "UPDATE `videojuego` SET `Stock` = $cantidad WHERE `videojuego`.`idVideojuego` = $idJuego";
+    $consulta2 = "UPDATE videojuego SET Stock=Stock+$cantidad WHERE idVideojuego=$idJuego";
     $resultado2 = mysqli_query($conexion, $consulta2);
     return $resultado;
 }
 function eliminarPlataformaCesta($conexion,$idItem,$idPlataforma,$precio,$cantidad,$idCesta){
-    $consulta = "DELETE FROM item WHERE `item`.`id` = $idItem";
+    $consulta = "DELETE FROM item WHERE `item`.`id`=$idItem";
     $resultado = mysqli_query($conexion, $consulta);
-    $consulta1 = "UPDATE `cesta` SET `PrecioTotal` = PrecioTotal-($cantidad*$precio)  WHERE `cesta`.`idCesta` = $idCesta";
+    $consulta1 = "UPDATE cesta SET PrecioTotal= PrecioTotal-$cantidad*$precio  WHERE idCesta=$idCesta";
     $resultado1 = mysqli_query($conexion, $consulta1);
-    $consulta2 = "UPDATE `plataforma` SET `Stock` =`Stock`+$cantidad WHERE `plataforma`.`idPlataforma` = $idPlataforma";
+    $consulta2 = "UPDATE plataforma SET Stock=Stock+$cantidad WHERE idPlataforma=$idPlataforma";
     $resultado2 = mysqli_query($conexion, $consulta2);
     return $resultado;
 }
