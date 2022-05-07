@@ -137,13 +137,12 @@ if (isset($_SESSION['Usuario'])) {
 
 				?>
 					
-					<div class="mr-5">
-						
-						<header>
-						<div class="nombre"><?=$comentario['Nombre']?></div>
-							<div class="fecha"><?=$comentario['fecha']?></div>
-						</header>
-						<div class="contenido"><?=$comentario['comentario']?></div>
+					<div class="jumbotron-fluid ml-3 comentario">
+						<div class="container">
+							<h5><?=$comentario['Nombre']?></h5>
+							<p><?=$comentario['fecha']?>.</p>
+							<p><?=$comentario['comentario']?></p>
+						</div>
 					</div>
 				<?php
 			
