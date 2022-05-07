@@ -2,10 +2,10 @@
 -- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost:3306
--- Tiempo de generación: 06-05-2022 a las 18:44:57
--- Versión del servidor: 5.7.24
--- Versión de PHP: 8.0.1
+-- Host: localhost:3306
+-- Generation Time: May 07, 2022 at 07:19 PM
+-- Server version: 5.7.24
+-- PHP Version: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `tiendaonline`
+-- Database: `tiendaonline`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cesta`
+-- Table structure for table `cesta`
 --
 
 CREATE TABLE `cesta` (
@@ -34,7 +34,7 @@ CREATE TABLE `cesta` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `cesta`
+-- Dumping data for table `cesta`
 --
 
 INSERT INTO `cesta` (`idCesta`, `PrecioTotal`, `idCliente`) VALUES
@@ -43,7 +43,7 @@ INSERT INTO `cesta` (`idCesta`, `PrecioTotal`, `idCliente`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `comentarioplataforma`
+-- Table structure for table `comentarioplataforma`
 --
 
 CREATE TABLE `comentarioplataforma` (
@@ -55,7 +55,7 @@ CREATE TABLE `comentarioplataforma` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `comentarioplataforma`
+-- Dumping data for table `comentarioplataforma`
 --
 
 INSERT INTO `comentarioplataforma` (`idComentario`, `comentario`, `idUsuario`, `idPlataforma`, `fecha`) VALUES
@@ -68,7 +68,7 @@ INSERT INTO `comentarioplataforma` (`idComentario`, `comentario`, `idUsuario`, `
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `comentariovideojuego`
+-- Table structure for table `comentariovideojuego`
 --
 
 CREATE TABLE `comentariovideojuego` (
@@ -80,7 +80,7 @@ CREATE TABLE `comentariovideojuego` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `comentariovideojuego`
+-- Dumping data for table `comentariovideojuego`
 --
 
 INSERT INTO `comentariovideojuego` (`idComentario`, `comentario`, `idUsuario`, `Videojuego`, `fecha`) VALUES
@@ -91,7 +91,7 @@ INSERT INTO `comentariovideojuego` (`idComentario`, `comentario`, `idUsuario`, `
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `item`
+-- Table structure for table `item`
 --
 
 CREATE TABLE `item` (
@@ -103,7 +103,7 @@ CREATE TABLE `item` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `item`
+-- Dumping data for table `item`
 --
 
 INSERT INTO `item` (`idItem`, `Cantidad`, `PrecioItem`, `idCesta`, `id`) VALUES
@@ -112,7 +112,7 @@ INSERT INTO `item` (`idItem`, `Cantidad`, `PrecioItem`, `idCesta`, `id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `plataforma`
+-- Table structure for table `plataforma`
 --
 
 CREATE TABLE `plataforma` (
@@ -127,7 +127,7 @@ CREATE TABLE `plataforma` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `plataforma`
+-- Dumping data for table `plataforma`
 --
 
 INSERT INTO `plataforma` (`idPlataforma`, `Nombre`, `Lanzamiento`, `Precio`, `Stock`, `Descripcion`, `Imagen`, `Logo`) VALUES
@@ -145,7 +145,7 @@ INSERT INTO `plataforma` (`idPlataforma`, `Nombre`, `Lanzamiento`, `Precio`, `St
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `productos`
+-- Table structure for table `productos`
 --
 
 CREATE TABLE `productos` (
@@ -157,7 +157,7 @@ CREATE TABLE `productos` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuario`
+-- Table structure for table `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -177,7 +177,7 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `usuario`
+-- Dumping data for table `usuario`
 --
 
 INSERT INTO `usuario` (`idUsuario`, `Usuario`, `Password`, `Nombre`, `Apellido1`, `Apellido2`, `Telefono`, `Email`, `CP`, `Provincia`, `ComunidadAutonoma`, `Rol`, `Dni`) VALUES
@@ -189,7 +189,7 @@ INSERT INTO `usuario` (`idUsuario`, `Usuario`, `Password`, `Nombre`, `Apellido1`
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `videojuego`
+-- Table structure for table `videojuego`
 --
 
 CREATE TABLE `videojuego` (
@@ -204,16 +204,16 @@ CREATE TABLE `videojuego` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `videojuego`
+-- Dumping data for table `videojuego`
 --
 
 INSERT INTO `videojuego` (`idVideojuego`, `Titulo`, `Compania`, `Publicacion`, `Descripcion`, `Imagen`, `Precio`, `Stock`) VALUES
 (1, 'The Legend of Zelda: Ocarina of Time', 'The Legend of Zelda: Ocarina of Time', '1998-11-28', 'The Legend of Zelda: Ocarina of Time es un videojuego de acción-aventura de 1998 desarrollado por la filial Nintendo EAD y publicado por Nintendo para la consola Nintendo 64', 'imagenes/zelda ocarina of time.jpg', 20.5, 0),
 (2, 'Fortnite', 'Nintendo', '2017-04-27', 'Fortnite es un videojuego del año 2017 desarrollado por la empresa Epic Games, lanzado como diferentes paquetes de software que presentan diferentes modos de juego, pero que comparten el mismo motor de juego y mecánicas', 'imagenes/fortnite.jpg', 30, 0),
-(3, 'The Legend of Zelda: The wind waker', 'Nintendo', '2017-03-04', 'Abre los ojos. Despierta, Link Cinco a?os despu?s de la ?ltima entrega original para sobremesa, el futuro de la serie The Legend of Zelda llega a Nintendo Switch y Wii U replanteando por completo las bases de la saga. Producido por Eiji Aonuma, The Legend of Zelda: Breath of the Wild te sumergir? en un mundo de descubrimiento con un impresionante estilo art?stico similar a The Wind Waker o Skyward Sword, una cautivadora banda sonora y una intrigante y melanc?lica historia. Despierta tras un siglo de letargo, ad?ntrate en el Hyrule m?s amplio y abierto jam?s creado por las tres grandes Diosas y forja tu propio camino con el orden y aventuras que quieras. La historia de la familia real de Hyrule es tambi?n la historia del cataclismo. Y la historia del cataclismo siempre ha sido la de Ganon. Descubre el enigm?tico pasado de esta asolada tierra, un mundo entero repleto de aventuras que espera ser explorado, y viaja como Link por bastos campos, espesos bosques y cumbres nevadas bajo el cielo abierto de Hyrule para revelar c?mo la oscuridad se impuso sobre la luz. Caracter?sticas: Olvida todas las convenciones de The Legend of Zelda y ad?ntrate en un enorme y abierto Hyrule, lucha contra temibles enemigos, caza feroces bestias y recolecta ingredientes para preparar comidas y elixires con los que subsistir. Resuelve los puzles que albergan los m?s de cien santuarios diferentes, ?brete camino entre sus trampas y consigue objetos especiales e ?tems que te ser?n de ayuda en tu recorrido. Prep?rate a conciencia y aprovecha las cualidades de variados atuendos  equipamiento para adaptarte al clima o aprovechar efectos especiales como ser m?s r?pido o m?s sigiloso. Pon a prueba tu capacidad estrat?gica utilizando a tu favor el entorno y elaborando las estrategias adecuadas con las que acabar con enemigos de todas las formas y tama?os. Como es peligroso ir solo. ?Lleva un amiibo! The Legend of Zelda: Breath of the Wild es compatible con figuras amiibo de la serie que te otorgar?n recompensas en forma de cofres o, con la figura Link Lobo de Twilight Princess, recibe la asistencia del temible animal para luchar contra enemigos o encontrar m?s f?cilmente objetos. The Legend of Zelda es una serie de videojuegos de acci?n-aventura creada por los dise?adores japoneses Shigeru Miyamoto y Takashi Tezuka,? y desarrollada por Nintendo, empresa que tambi?n se encarga de su distribuci?n internacional. Su trama por lo general describe las heroicas aventuras del joven guerrero Link, que debe enfrentarse a peligros y resolver acertijos para ayudar a la Princesa Zelda a derrotar a Ganondorf y salvar su hogar, el reino de Hyrule. Entra en un mundo de aventura Olvida todo lo que sabes sobre los juegos de The Legend of Zelda. Entra en un mundo de descubrimientos, exploraci?n y aventura en The Legend of Zelda: Breath of the Wild, un nuevo juego de la aclamada serie que rompe con las convenciones. Viaja por praderas, bosques y cumbres monta?osas para descubrir qu? ha sido del asolado reino de Hyrule en esta maravillosa aventura a cielo abierto.', 'imagenes/zelda the wind waker.jpg', 20, 1),
-(4, 'The Legend of Zelda: Breath of the Wild', 'Nintendo', '2017-03-04', 'Abre los ojos. Despierta, Link Cinco a?os despu?s de la ?ltima entrega original para sobremesa, el futuro de la serie The Legend of Zelda llega a Nintendo Switch y Wii U replanteando por completo las bases de la saga. Producido por Eiji Aonuma, The Legend of Zelda: Breath of the Wild te sumergir? en un mundo de descubrimiento con un impresionante estilo art?stico similar a The Wind Waker o Skyward Sword, una cautivadora banda sonora y una intrigante y melanc?lica historia. Despierta tras un siglo de letargo, ad?ntrate en el Hyrule m?s amplio y abierto jam?s creado por las tres grandes Diosas y forja tu propio camino con el orden y aventuras que quieras. La historia de la familia real de Hyrule es tambi?n la historia del cataclismo. Y la historia del cataclismo siempre ha sido la de Ganon. Descubre el enigm?tico pasado de esta asolada tierra, un mundo entero repleto de aventuras que espera ser explorado, y viaja como Link por bastos campos, espesos bosques y cumbres nevadas bajo el cielo abierto de Hyrule para revelar c?mo la oscuridad se impuso sobre la luz. Caracter?sticas: Olvida todas las convenciones de The Legend of Zelda y ad?ntrate en un enorme y abierto Hyrule, lucha contra temibles enemigos, caza feroces bestias y recolecta ingredientes para preparar comidas y elixires con los que subsistir. Resuelve los puzles que albergan los m?s de cien santuarios diferentes, ?brete camino entre sus trampas y consigue objetos especiales e ?tems que te ser?n de ayuda en tu recorrido. Prep?rate a conciencia y aprovecha las cualidades de variados atuendos  equipamiento para adaptarte al clima o aprovechar efectos especiales como ser m?s r?pido o m?s sigiloso. Pon a prueba tu capacidad estrat?gica utilizando a tu favor el entorno y elaborando las estrategias adecuadas con las que acabar con enemigos de todas las formas y tama?os. Como es peligroso ir solo. ?Lleva un amiibo! The Legend of Zelda: Breath of the Wild es compatible con figuras amiibo de la serie que te otorgar?n recompensas en forma de cofres o, con la figura Link Lobo de Twilight Princess, recibe la asistencia del temible animal para luchar contra enemigos o encontrar m?s f?cilmente objetos. The Legend of Zelda es una serie de videojuegos de acci?n-aventura creada por los dise?adores japoneses Shigeru Miyamoto y Takashi Tezuka,? y desarrollada por Nintendo, empresa que tambi?n se encarga de su distribuci?n internacional. Su trama por lo general describe las heroicas aventuras del joven guerrero Link, que debe enfrentarse a peligros y resolver acertijos para ayudar a la Princesa Zelda a derrotar a Ganondorf y salvar su hogar, el reino de Hyrule. Entra en un mundo de aventura Olvida todo lo que sabes sobre los juegos de The Legend of Zelda. Entra en un mundo de descubrimientos, exploraci?n y aventura en The Legend of Zelda: Breath of the Wild, un nuevo juego de la aclamada serie que rompe con las convenciones. Viaja por praderas, bosques y cumbres monta?osas para descubrir qu? ha sido del asolado reino de Hyrule en esta maravillosa aventura a cielo abierto.', 'imagenes/zelda breath of the wild.jpg', 50, 1),
+(3, 'The Legend of Zelda: The wind waker', 'Nintendo', '2017-03-04', 'Abre los ojos. Despierta, Link Cinco años despues de la ultima entrega original para sobremesa, el futuro de la serie The Legend of Zelda llega a Nintendo Switch y Wii U replanteando por completo las bases de la saga. Producido por Eiji Aonuma, The Legend of Zelda: Breath of the Wild te sumergir en un mundo de descubrimiento con un impresionante estilo art?stico similar a The Wind Waker o Skyward Sword, una cautivadora banda sonora y una intrigante y melancolica historia. Despierta tras un siglo de letargo, adentrate en el Hyrule mas amplio y abierto jamas creado por las tres grandes Diosas y forja tu propio camino con el orden y aventuras que quieras. La historia de la familia real de Hyrule es tambien la historia del cataclismo. Y la historia del cataclismo siempre ha sido la de Ganon. Descubre el enigmatico pasado de esta asolada tierra, un mundo entero repleto de aventuras que espera ser explorado, y viaja como Link por bastos campos, espesos bosques y cumbres nevadas bajo el cielo abierto de Hyrule para revelar como la oscuridad se impuso sobre la luz. Caracteristicas: Olvida todas las convenciones de The Legend of Zelda y adentrate en un enorme y abierto Hyrule, lucha contra temibles enemigos, caza feroces bestias y recolecta ingredientes para preparar comidas y elixires con los que subsistir. Resuelve los puzles que albergan los mas de cien santuarios diferentes, abrete camino entre sus trampas y consigue objetos especiales e items que te serian de ayuda en tu recorrido. Preparate a conciencia y aprovecha las cualidades de variados atuendos  equipamiento para adaptarte al clima o aprovechar efectos especiales como ser mas rapido o mas sigiloso. Pon a prueba tu capacidad estrategica utilizando a tu favor el entorno y elaborando las estrategias adecuadas con las que acabar con enemigos de todas las formas y tama?os. Como es peligroso ir solo. The Legend of Zelda: Breath of the Wild es compatible con figuras amiibo de la serie que te otorgar en recompensas en forma de cofres o, con la figura Link Lobo de Twilight Princess, recibe la asistencia del temible animal para luchar contra enemigos o encontrar mas facilmente objetos. The Legend of Zelda es una serie de videojuegos de accion-aventura creada por los diseñadores japoneses Shigeru Miyamoto y Takashi Tezuka, y desarrollada por Nintendo, empresa que tambien se encarga de su distribucion internacional. Su trama por lo general describe las heroicas aventuras del joven guerrero Link, que debe enfrentarse a peligros y resolver acertijos para ayudar a la Princesa Zelda a derrotar a Ganondorf y salvar su hogar, el reino de Hyrule. Entra en un mundo de aventura Olvida todo lo que sabes sobre los juegos de The Legend of Zelda. Entra en un mundo de descubrimientos, exploraci?n y aventura en The Legend of Zelda: Breath of the Wild, un nuevo juego de la aclamada serie que rompe con las convenciones. Viaja por praderas, bosques y cumbres montañosas para descubrir que ha sido del asolado reino de Hyrule en esta maravillosa aventura a cielo abierto.', 'imagenes/zelda the wind waker.jpg', 20, 1),
+(4, 'The Legend of Zelda: Breath of the Wild', 'Nintendo', '2017-03-04', 'Abre los ojos. Despierta, Link Cinco años despues de la ltima entrega original para sobremesa, el futuro de la serie The Legend of Zelda llega a Nintendo Switch y Wii U replanteando por completo las bases de la saga. Producido por Eiji Aonuma, The Legend of Zelda: Breath of the Wild te sumergir en un mundo de descubrimiento con un impresionante estilo artistico similar a The Wind Waker o Skyward Sword, una cautivadora banda sonora y una intrigante y melancolica historia. Despierta tras un siglo de letargo, adentrate en el Hyrule mas amplio y abierto jamas creado por las tres grandes Diosas y forja tu propio camino con el orden y aventuras que quieras. La historia de la familia real de Hyrule es tambien la historia del cataclismo. Y la historia del cataclismo siempre ha sido la de Ganon. Descubre el enigmatico pasado de esta asolada tierra, un mundo entero repleto de aventuras que espera ser explorado, y viaja como Link por bastos campos, espesos bosques y cumbres nevadas bajo el cielo abierto de Hyrule para revelar como la oscuridad se impuso sobre la luz. Caractersticas: Olvida todas las convenciones de The Legend of Zelda y adentrate en un enorme y abierto Hyrule, lucha contra temibles enemigos, caza feroces bestias y recolecta ingredientes para preparar comidas y elixires con los que subsistir. Resuelve los puzles que albergan los mas de cien santuarios diferentes, abrete camino entre sus trampas y consigue objetos especiales e items que te seran de ayuda en tu recorrido. Preparate a conciencia y aprovecha las cualidades de variados atuendos  equipamiento para adaptarte al clima o aprovechar efectos especiales como ser mas pido o mas sigiloso. Pon a prueba tu capacidad estrategica utilizando a tu favor el entorno y elaborando las estrategias adecuadas con las que acabar con enemigos de todas las formas y tamaños. Como es peligroso ir solo. Lleva un amiibo The Legend of Zelda: Breath of the Wild es compatible con figuras amiibo de la serie que te otorgar recompensas en forma de cofres o, con la figura Link Lobo de Twilight Princess, recibe la asistencia del temible animal para luchar contra enemigos o encontrar mas facilmente objetos. The Legend of Zelda es una serie de videojuegos de accion-aventura creada por los diseñadores japoneses Shigeru Miyamoto y Takashi Tezuka, y desarrollada por Nintendo, empresa que tambien se encarga de su distribucion internacional. Su trama por lo general describe las heroicas aventuras del joven guerrero Link, que debe enfrentarse a peligros y resolver acertijos para ayudar a la Princesa Zelda a derrotar a Ganondorf y salvar su hogar, el reino de Hyrule. Entra en un mundo de aventura Olvida todo lo que sabes sobre los juegos de The Legend of Zelda. Entra en un mundo de descubrimientos, exploracion y aventura en The Legend of Zelda: Breath of the Wild, un nuevo juego de la aclamada serie que rompe con las convenciones. Viaja por praderas, bosques y cumbres montañosas para descubrir que ha sido del asolado reino de Hyrule en esta maravillosa aventura a cielo abierto.', 'imagenes/zelda breath of the wild.jpg', 50, 1),
 (5, 'Final Fantasy IX', 'Square', '2000-07-07', 'Final Fantasy IX es un videojuego de rol realizado por la empresa japonesa Squaresoft en 2000. Esta es la novena entrega del juego y el último capítulo de la saga realizado para la consola PlayStation', 'imagenes/final fantasy ix.jpg', 25.5, 1),
-(6, 'Bloodborne', 'From Software', '2015-03-26', 'Hazte con Bloodborne en para PlayStation 4 y encarna al cazador, uno de los mejores juegos para PlayStation 4. Un juego de acci?n tan exigente como desafiante. ?Estar?s a la altura de este reto o perecer?s en el intento? Con una ambientaci?n t?trica y oscura, este RPG de acci?n se ha convertido en uno de los cl?sicos m?s c?lebres de PlayStation 4.', 'imagenes/bloodborne.jpg', 30, 1),
+(6, 'Bloodborne', 'From Software', '2015-03-26', 'Hazte con Bloodborne en para PlayStation 4 y encarna al cazador, uno de los mejores juegos para PlayStation 4. Un juego de accion tan exigente como desafiante. Estaras a la altura de este reto o parecer  en el intento Con una ambientacion trica y oscura, este RPG de accion se ha convertido en uno de los clasicos mas celebres de PlayStation 4.', 'imagenes/bloodborne.jpg', 30, 1),
 (7, 'Fifa21', 'BluePoint', '2020-11-23', 'El superfamoso juego de futbol del momento.', 'imagenes/fifa21.jpg', 30, 0),
 (8, 'Dragon Quest VIII: El periplo del rey maldito', 'Square Enix', '2004-11-27', 'Una siniestra amenaza se cierne sobre el reino y amenaza con destruirlo en DRAGON QUEST VIII: El periplo del Rey Maldito para la familia de consolas Nintendo 3DS.   Una misi?n ?pica, un grupo de h?roes por accidente y una terrible maldici?n...     Un retorcido buf?n ha lanzado una maldici?n sobre el reino de Trodain, transformando al rey en un trol, a la princesa en un caballo y sellando el Castillo de Trodain con enredaderas encantadas. En el papel de Hero, te embarcar?s en una misi?n para poner freno al demente buf?n y devolver el reino a la normalidad con la ayuda de los aliados que reclutes en tu camino.     ?Lucha!   Lidera a un equipo de h?roes a trav?s de un mundo enorme plagado de siniestras mazmorras en las que tendr?is que plantar cara a cientos de monstruos en cl?sicas batallas por turnos. Usa la astucia para derrotar a tus enemigos a tu propio ritmo, o usa la funci?n \"acelerar\" para acabar con tus rivales m?s r?pidamente.   A medida que tus guerreros se vayan haciendo m?s fuertes, as?gnales puntos de destreza para que aprendan nuevos hechizos, habilidades, etc. Equipa a tus h?roes con los artefactos m?s novedosos para el combate y combina objetos viejos en el pote de alquimia para crear objetos nuevos instant?neamente.     No sigas el camino marcado...   Durante tu aventura, aseg?rate de explorar todos los pueblos, visitar todas las tiendas y emprender todas las misiones secundarias posibles. Forma un equipo de monstruos y llega a lo m?s alto en la Arena de Monstruos o saca fotos de tu aventura que podr?s compartir con otros usuarios v?a StreetPass.   Descubre las otras novedades de la versi?n para Nintendo 3DS de DRAGON QUEST VIII: El periplo del Rey Maldito', 'imagenes/dragon quest viii.jpg', 50, 2),
 (9, 'Dragon Ball Figtherz', 'Arc System Works', '2018-02-01', 'Llega la Lucha Definitiva      Vuelve la acci?n Dragon Ball a PlayStation 4, Xbox One y Nintendo Switch con Dragon Ball FighterZ, el juego de lucha 2D para la actual generaci?n. Tras el ?xito de Xenoverse, llega un nuevo Dragon Ball que mejora al m?ximo los gr?ficos del anime, con una mec?nica f?cil de aprender pero... Dif?cil de dominar.        Caracter?sticas:        Soporte 3vs3 Tag.   Permite al jugador entrenar y manejar el estilo de m?s de un luchador con lo que se consigue una jugabilidad m?s profunda.        Excelentes gr?ficos anime   El poder del motor Unreal llevado a la m?xima potencia para hacer de Dragon Ball FighterZ una haza?a de fuerza.        Luchas espectaculares   Disfruta de combos en el a?re, escenarios interactivos y famosas escenas del anime de Dragon Ball a una resoluci?n de 60FPS y 1080p. Con mejores resoluciones incluso en PlayStyation 4 Pro y Xbox One X        Tras el ?xito de la saga Xenoverse, llega un nuevo juego Dragon Ball de lucha en 2D para la generaci?n actual de consolas.   DRAGON BALL FighterZ vuelve con todo el contenido que ha hecho que las series DRAGON BALL sean tan apreciadas: espectaculares enfrentamientos sin fin con los luchadores m?s poderosos.   Desarrollado por Arc System Works, DRAGON BALL FighterZ mejora al m?ximo los gr?ficos del anime y resulta f?cil de aprender pero dif?cil de dominar.', 'imagenes/dragon ball figther z.jpg', 69.9, 20),
@@ -224,18 +224,18 @@ INSERT INTO `videojuego` (`idVideojuego`, `Titulo`, `Compania`, `Publicacion`, `
 (31, 'Fifa', 'EA SPORTS', '2021-10-10', 'Futbol', 'images/Fifa.jpg', 20, 20);
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `cesta`
+-- Indexes for table `cesta`
 --
 ALTER TABLE `cesta`
   ADD PRIMARY KEY (`idCesta`),
   ADD KEY `Cesta` (`idCliente`);
 
 --
--- Indices de la tabla `comentarioplataforma`
+-- Indexes for table `comentarioplataforma`
 --
 ALTER TABLE `comentarioplataforma`
   ADD PRIMARY KEY (`idComentario`),
@@ -243,7 +243,7 @@ ALTER TABLE `comentarioplataforma`
   ADD KEY `idPlataforma` (`idPlataforma`);
 
 --
--- Indices de la tabla `comentariovideojuego`
+-- Indexes for table `comentariovideojuego`
 --
 ALTER TABLE `comentariovideojuego`
   ADD PRIMARY KEY (`idComentario`),
@@ -251,21 +251,21 @@ ALTER TABLE `comentariovideojuego`
   ADD KEY `Videojuego` (`Videojuego`);
 
 --
--- Indices de la tabla `item`
+-- Indexes for table `item`
 --
 ALTER TABLE `item`
   ADD PRIMARY KEY (`id`),
   ADD KEY `ItemPerteneceACesta` (`idCesta`);
 
 --
--- Indices de la tabla `plataforma`
+-- Indexes for table `plataforma`
 --
 ALTER TABLE `plataforma`
   ADD PRIMARY KEY (`idPlataforma`),
   ADD UNIQUE KEY `Nombre_UNIQUE` (`Nombre`);
 
 --
--- Indices de la tabla `productos`
+-- Indexes for table `productos`
 --
 ALTER TABLE `productos`
   ADD PRIMARY KEY (`idProductos`,`IdVideojuego`,`IdPlataforma`),
@@ -273,7 +273,7 @@ ALTER TABLE `productos`
   ADD KEY `De_la_plataforma_idx` (`IdPlataforma`);
 
 --
--- Indices de la tabla `usuario`
+-- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`idUsuario`),
@@ -281,89 +281,89 @@ ALTER TABLE `usuario`
   ADD UNIQUE KEY `Usuario_UNIQUE` (`Usuario`);
 
 --
--- Indices de la tabla `videojuego`
+-- Indexes for table `videojuego`
 --
 ALTER TABLE `videojuego`
   ADD PRIMARY KEY (`idVideojuego`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `comentarioplataforma`
+-- AUTO_INCREMENT for table `comentarioplataforma`
 --
 ALTER TABLE `comentarioplataforma`
   MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT de la tabla `comentariovideojuego`
+-- AUTO_INCREMENT for table `comentariovideojuego`
 --
 ALTER TABLE `comentariovideojuego`
   MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `item`
+-- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT de la tabla `plataforma`
+-- AUTO_INCREMENT for table `plataforma`
 --
 ALTER TABLE `plataforma`
   MODIFY `idPlataforma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT de la tabla `productos`
+-- AUTO_INCREMENT for table `productos`
 --
 ALTER TABLE `productos`
   MODIFY `idProductos` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `usuario`
+-- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT de la tabla `videojuego`
+-- AUTO_INCREMENT for table `videojuego`
 --
 ALTER TABLE `videojuego`
   MODIFY `idVideojuego` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
--- Restricciones para tablas volcadas
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `cesta`
+-- Constraints for table `cesta`
 --
 ALTER TABLE `cesta`
   ADD CONSTRAINT `Cesta` FOREIGN KEY (`idCliente`) REFERENCES `usuario` (`idUsuario`);
 
 --
--- Filtros para la tabla `comentarioplataforma`
+-- Constraints for table `comentarioplataforma`
 --
 ALTER TABLE `comentarioplataforma`
   ADD CONSTRAINT `comentarioplataforma_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`),
   ADD CONSTRAINT `comentarioplataforma_ibfk_2` FOREIGN KEY (`idPlataforma`) REFERENCES `plataforma` (`idPlataforma`);
 
 --
--- Filtros para la tabla `comentariovideojuego`
+-- Constraints for table `comentariovideojuego`
 --
 ALTER TABLE `comentariovideojuego`
   ADD CONSTRAINT `comentariovideojuego_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`),
   ADD CONSTRAINT `comentariovideojuego_ibfk_2` FOREIGN KEY (`Videojuego`) REFERENCES `videojuego` (`idVideojuego`);
 
 --
--- Filtros para la tabla `item`
+-- Constraints for table `item`
 --
 ALTER TABLE `item`
   ADD CONSTRAINT `ItemPerteneceACesta` FOREIGN KEY (`idCesta`) REFERENCES `cesta` (`idCesta`);
 
 --
--- Filtros para la tabla `productos`
+-- Constraints for table `productos`
 --
 ALTER TABLE `productos`
   ADD CONSTRAINT `FK_Es_un_Videojuego` FOREIGN KEY (`IdVideojuego`) REFERENCES `videojuego` (`idVideojuego`),
