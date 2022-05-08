@@ -90,7 +90,7 @@ if (isset($_SESSION['Usuario'])) {
 	<div class="comentarios">
 
 <?php
-
+//con esta condicion añadimos un comentario
 	if(isset($_SESSION['Usuario'])){
 		?>
 			<div>
