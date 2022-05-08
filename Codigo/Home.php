@@ -58,7 +58,7 @@ session_start();
 					}
 				?>
 			</div>
-
+				
 			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
 				<span class="glyphicon glyphicon-chevron-left"></span>
 				<span class="sr-only">Anterior</span>

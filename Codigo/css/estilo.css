@@ -332,8 +332,7 @@ form{
 /*Estilo para todos los botones que como normal general van a tener esa tipografia */
 #botones{
 	font: oblique bold 120% cursive;
-	margin-right: 20px;
-	margin-bottom: 15px;
+	background-image: url('https://th.bing.com/th/id/OIP.vLtxVSJQIRNCe2V4-49b8wHaEo?w=287&h=180&c=7&r=0&o=5&pid=1.7');
 }
 
 /*Estilo para separar la barra de navegacion de los botones*/

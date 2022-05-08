@@ -16,13 +16,13 @@
 <div class="card" id="card-login" style="width: 18rem;">
 	<div class="card-body" id="card-html">
 	<center>
-	<form action="recuperar_contrasena.php" method="post">
+	<form action="contrasenaNueva.php" method="post">
 		
 		<div><h2>Recupera tu contraseña</div></h2>
 		<label><b>Introduce el Dni de su cuenta:</b></label>
 		<input type="text" name="dni" id="dni"  class="form-control" placeholder="Ejemplo: 45314598k">
 		<span id="dni_error">El Dni introducido no es correcto</span>
-		<input class="boton" type="submit">
+		<input class="boton" type="submit" name="recuContra">
 		
 	</form>
 	</center>

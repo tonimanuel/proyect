@@ -66,6 +66,17 @@ function consultaUsuario($conexion,$usuario){
         $resultado = mysqli_query($conexion, $consulta);
         return $resultado;
     }
+    function obtenerUsuarios($conexion){
+        $consulta = "SELECT * FROM Usuario" ;
+        $resultado = mysqli_query($conexion, $consulta);
+        return $resultado;
+   }    
+    function usuarioRecuperar($conexion,$dni){
+        $consulta = "SELECT * FROM `usuario` WHERE Dni="$dni"" ;
+        $resultado = mysqli_query($conexion, $consulta);
+        return $resultado;
+    }
+    //SELECT * FROM `usuario` WHERE Dni="45313662M"
 //funcion que nos permite borrar un usuario
     function borrarusuario($conexion,$idUsuario){
         $consulta = "DELETE FROM `tiendaonline`.`usuario` WHERE (`idUsuario` = '$idUsuario')";
