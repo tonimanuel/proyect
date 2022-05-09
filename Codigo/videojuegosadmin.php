@@ -15,7 +15,7 @@
 <body>
 <?php include('./inc/header.php'); ?>
 
-<div class="container-fluid">
+<div class="container-fluid cuerpo">
 	<div class="nav justify-content-center" id="botones">
 		<a class="nav-item nav-link" aria-current="page" href="nuevoJuego.php">Nuevo Juego</a>
 	</div>
