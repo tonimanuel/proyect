@@ -1,6 +1,6 @@
 <?php
 function consultaUsuario($conexion,$usuario){
-    $consulta = "Select * from Usuario WHERE  Usuario = '$usuario'";
+    $consulta = "Select * from usuario WHERE  Usuario = '$usuario'";
     $resultado = mysqli_query($conexion,$consulta);
     return $resultado;
 }
@@ -10,7 +10,16 @@ function consultaUsuario($conexion,$usuario){
         $resultado = mysqli_query($conexion, $consulta);
         return $resultado;
     }
-
+    function usuarioRecuperar($conexion,$dni){
+        $consulta = "SELECT * FROM `usuario` WHERE Dni='$dni'" ;
+        $resultado = mysqli_query($conexion, $consulta);
+        return $resultado;
+    }
+    function cambiarContra($conexion,$contra,$id){
+        $consulta = "UPDATE `usuario` SET `Password` = '$contra' WHERE `idUsuario` = $id" ;
+        $resultado = mysqli_query($conexion, $consulta);
+        return $resultado;
+    }
 //Funcion para insertar un usuario, la usamos para registrar un usuario a la pagina web
     function insertarUsuarios($conexion,$usuario,$password,$nombre,$apellido1,$apellido2,$telefono, $email, $cp, $provincia, $comunidadautonoma,$dni){
         $consulta = "INSERT INTO usuario (`Usuario`, `Password`, `Nombre`, `Apellido1`, `Apellido2`, `Telefono`, `Email`, `CP`, `Provincia`, `ComunidadAutonoma`, `Dni` ,`Rol`) VALUES ('$usuario','$password','$nombre','$apellido1','$apellido2','$telefono', '$email', '$cp', '$provincia', '$comunidadautonoma', '$dni' ,'usuario')";
@@ -59,25 +68,14 @@ function consultaUsuario($conexion,$usuario){
          $resultado = mysqli_query($conexion, $consulta);
          return $resultado;
     }
-//Funcion que nos cambia el usuario
+
     function adminModificaUsuario($conexion,$usuario,$password,$nombre,$apellido1,$apellido2,$telefono,$email,$cp,$provincia,$comunidadautonoma,$dni,$rol,$idUsuario){
        $consulta = "UPDATE `tiendaonline`.`usuario` SET `Usuario` = '$usuario', `Password` = '$password', `Nombre` = '$nombre', `Apellido1` = '$apellido1', `Apellido2` = '$apellido2', `Telefono` = '$telefono', `Email` = '$email', `CP` = '$cp', `Provincia` = '$provincia', `ComunidadAutonoma` = '$comunidadautonoma', `Dni` = '$dni', 
        `Rol` = '$rol' WHERE (`idUsuario` = '$idUsuario')";
         $resultado = mysqli_query($conexion, $consulta);
         return $resultado;
     }
-    function obtenerUsuarios($conexion){
-        $consulta = "SELECT * FROM Usuario" ;
-        $resultado = mysqli_query($conexion, $consulta);
-        return $resultado;
-   }    
-    function usuarioRecuperar($conexion,$dni){
-        $consulta = "SELECT * FROM `usuario` WHERE Dni="$dni"" ;
-        $resultado = mysqli_query($conexion, $consulta);
-        return $resultado;
-    }
-    //SELECT * FROM `usuario` WHERE Dni="45313662M"
-//funcion que nos permite borrar un usuario
+
     function borrarusuario($conexion,$idUsuario){
         $consulta = "DELETE FROM `tiendaonline`.`usuario` WHERE (`idUsuario` = '$idUsuario')";
         $resultado = mysqli_query($conexion, $consulta);
@@ -85,12 +83,12 @@ function consultaUsuario($conexion,$usuario){
     }
 
      function usuarioModificaUsuario($conexion,$usuario,$password,$nombre,$apellido1,$apellido2,$telefono,$email,$cp,$provincia,$comunidadautonoma,$dni,$idUsuario){
-       $consulta = " UPDATE `tiendaonline`.`usuario` SET `Usuario` = '$usuario', `Password` = '$password', `Nombre` = '$nombre', `Apellido1` = '$apellido1', `Apellido2` = '$apellido2', `Telefono` = '$telefono', `Email` = '$email', `CP` = '$cp', `Provincia` = '$provincia', `ComunidadAutonoma` = '$comunidadautonoma', `Dni` = '$dni', `Rol` = 'usuario' WHERE (`idUsuario` = '$idUsuario')";
+       $consulta = " UPDATE `tiendaonline`.`usuario` SET `Usuario` = '$usuario', `Password` = '$password', `Nombre` = '$nombre', `Apellido1` = '$apellido1', `Apellido2` = '$apellido2', `Telefono` = '$telefono', `Email` = '$email', `CP` = '$cp', `Provincia` = '$provincia', `ComunidadAutonoma` = '$comunidadautonoma', `Dni` = '$dni', `Rol` = 'usuario' WHERE `idUsuario` = '$idUsuario'";
         $resultado = mysqli_query($conexion, $consulta);
         return $resultado;
     }
-//Funcion que nos muestra el usuario
-    function enseñarusuarioporid($conexion,$idUsuario){
+
+    function ensenarusuarioporid($conexion,$idUsuario){
         $consulta = "SELECT * FROM `usuario` WHERE (`idUsuario` = '$idUsuario')";
         $resultado = mysqli_query($conexion, $consulta);
         return $resultado;

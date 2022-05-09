@@ -5,7 +5,7 @@
 
 //Nos conectamos a la base de datos
 	$conexion = conectar(false);
-
+	session_start();
 //Cogemos las variables que vamos a usar
 	$usuario = $_POST['usuario'];
 	$password = $_POST['password'];
@@ -18,9 +18,9 @@
 	$provincia = $_POST['provincia'];
 	$comunidadautonoma = $_POST['comunidadautonoma'];
 	$dni = $_POST['dni'];
-	$idUsuario = $_POST['idUsuario'];
+	$idUsuario = $_SESSION['idUsuario'];
 
-
+		echo $idUsuario;
 //utilizamos la funcion para modificar un usuario
 	 $consulta = usuarioModificaUsuario($conexion,$usuario,$password,$nombre,$apellido1,$apellido2,$telefono,$email,$cp,$provincia,$comunidadautonoma,$dni,$idUsuario);
 

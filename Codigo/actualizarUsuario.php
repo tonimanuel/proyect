@@ -8,7 +8,7 @@
 
 //Y cogemos el id de productos por que lo vamos a necesitar
 	$idUsuario = $_GET['idUsuario'];
-	$consulta = enseñarusuarioporid($conexion,$idUsuario);
+	$consulta = ensenarusuarioporid($conexion,$idUsuario);
 	$fila = mysqli_fetch_assoc($consulta);
 
 ?>

@@ -332,14 +332,17 @@ form{
 /*Estilo para todos los botones que como normal general van a tener esa tipografia */
 #botones{
 	font: oblique bold 120% cursive;
-	background-image: url('https://th.bing.com/th/id/OIP.vLtxVSJQIRNCe2V4-49b8wHaEo?w=287&h=180&c=7&r=0&o=5&pid=1.7');
+	margin-right: 20px;
+	margin-bottom: 15px;
 }
 
 /*Estilo para separar la barra de navegacion de los botones*/
 #separate{
 	margin-right: 50px;
 }
-
+body{
+	
+}
 
 /*Estilo para las dimensiones de la carta del catalogo*/
 #carta-catalogo{

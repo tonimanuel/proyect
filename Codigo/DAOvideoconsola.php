@@ -42,7 +42,7 @@
         $resultado = mysqli_query($conexion, $consulta);
         return $resultado;
     }
-//funcion para el logo
+
       function logo($conexion,$idPlataforma){
         $consulta = "SELECT `Logo` FROM `plataforma` WHERE `idPlataforma` = '$idPlataforma'";
         $resultado = mysqli_query($conexion, $consulta);

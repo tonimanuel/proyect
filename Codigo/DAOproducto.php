@@ -42,7 +42,6 @@ function eliminarJuegoCesta($conexion,$idItem,$idJuego,$precio,$cantidad,$idCest
     $resultado2 = mysqli_query($conexion, $consulta2);
     return $resultado;
 }
-//Funcion que nos permite eliminar una plataforma de la cesta
 function eliminarPlataformaCesta($conexion,$idItem,$idPlataforma,$precio,$cantidad,$idCesta){
     $consulta = "DELETE FROM item WHERE `item`.`id`=$idItem";
     $resultado = mysqli_query($conexion, $consulta);

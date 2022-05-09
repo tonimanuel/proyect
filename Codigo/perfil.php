@@ -1,7 +1,9 @@
 <?php 
 //iniciamos la sesion
 session_start();
-
+	require 'DAOusuarios.php';
+	require 'bd/conectorBD.php';
+	$conexion = conectar(false); 
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,19 +40,21 @@ session_start();
 			<th>Modificar</th>
 			<th>Dar de baja</th>
 		</tr>
-
+		<?php $consulta = ensenarusuarioporid($conexion,$_SESSION['idUsuario']);
+		$fila = mysqli_fetch_assoc($consulta);
+		?>
 		<tr>
-			<td><b> <?php echo $_SESSION['Usuario']?> </b></td>
-			<td><b> <?php echo $_SESSION['Password']?> </b></td>
-			<td><b> <?php echo $_SESSION['Nombre']?> </b></td>
-			<td><b> <?php echo $_SESSION['Apellido1']?> </b></td>
-			<td><b> <?php echo $_SESSION['Apellido2']?> </b></td>
-			<td><b> <?php echo $_SESSION['Telefono']?> </b></td>
-			<td><b> <?php echo $_SESSION['Email']?> </b></td>
-			<td><b> <?php echo $_SESSION['CP']?> </b></td>
-			<td><b> <?php echo $_SESSION['Provincia']?> </b></td>
-			<td><b> <?php echo $_SESSION['ComunidadAutonoma']?> </b></td>
-			<td><b> <?php echo $_SESSION['Rol']?> </b></td>
+			<td><b> <?php echo $fila['Usuario']?> </b></td>
+			<td><b> <?php echo $fila['Password']?> </b></td>
+			<td><b> <?php echo $fila['Nombre']?> </b></td>
+			<td><b> <?php echo $fila['Apellido1']?> </b></td>
+			<td><b> <?php echo $fila['Apellido2']?> </b></td>
+			<td><b> <?php echo $fila['Telefono']?> </b></td>
+			<td><b> <?php echo $fila['Email']?> </b></td>
+			<td><b> <?php echo $fila['CP']?> </b></td>
+			<td><b> <?php echo $fila['Provincia']?> </b></td>
+			<td><b> <?php echo $fila['ComunidadAutonoma']?> </b></td>
+			<td><b> <?php echo $fila['Rol']?> </b></td>
 			
 			<td>
 				<ul class="nav justify-content-center">

@@ -22,13 +22,22 @@
 		<label><b>Introduce el Dni de su cuenta:</b></label>
 		<input type="text" name="dni" id="dni"  class="form-control" placeholder="Ejemplo: 45314598k">
 		<span id="dni_error">El Dni introducido no es correcto</span>
-		<input class="boton" type="submit" name="recuContra">
+		<input class="boton" type="submit" name="cambiarContra">
 		
 	</form>
 	</center>
 	</div>
 </div>
+<?php 
+			if (isset($_POST['nuevaContra'])) {
 
+				echo $_SESSION['Dni'];
+				$resulta=cambiarContra($conexion,$_POST['pass'],$_SESSION['idUsuario']);
+				if ($resulta) {
+					echo "Se modifico correctament";
+				}
+			}
+?>
 </div>
 
 <?php include("./inc/footer.php")?>
