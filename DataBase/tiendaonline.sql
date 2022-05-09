@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 08, 2022 at 07:10 PM
+-- Generation Time: May 09, 2022 at 09:41 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -38,6 +38,7 @@ CREATE TABLE `cesta` (
 --
 
 INSERT INTO `cesta` (`idCesta`, `PrecioTotal`, `idCliente`) VALUES
+(10, 0, 10),
 (12, 30, 12);
 
 -- --------------------------------------------------------
@@ -176,7 +177,7 @@ CREATE TABLE `usuario` (
   `Provincia` varchar(45) COLLATE utf8_bin NOT NULL COMMENT 'Se comprobar? que la provincia introducida concuerda con el CP introducido',
   `ComunidadAutonoma` varchar(45) COLLATE utf8_bin NOT NULL COMMENT 'Se comprobar? que la provincia seleccionada pertenece a la comunidad aut?noma correspondiente',
   `Rol` varchar(45) COLLATE utf8_bin NOT NULL,
-  `Dni` varchar(15) COLLATE utf8_bin DEFAULT NULL
+  `Dni` varchar(45) COLLATE utf8_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
@@ -184,11 +185,10 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`idUsuario`, `Usuario`, `Password`, `Nombre`, `Apellido1`, `Apellido2`, `Telefono`, `Email`, `CP`, `Provincia`, `ComunidadAutonoma`, `Rol`, `Dni`) VALUES
-(10, 'Administrador', '1@2Baaaa', 'Admin', 'Admin', 'Admin', '123548754', 'admin@gmail.com', '<br /', 'Melilla', 'Melilla', 'admin', '45315595K'),
-(12, 'antonio', 'Alumno2021.', 'Antonio', 'Martinez ', 'El mouanid', '606743856', 'tonimanuel4@gmail.com', '<br /', 'Melilla', 'Melilla', 'usuario', '45313762M'),
-(13, '', '', '', '', '', '', '', '', '', '', 'usuario', ''),
-(14, 'manuel', 'Alumno2021.', 'manuel', 'martinez', 'martinez', '666475487', 'tonimanuel4@gmail.com', '52440', 'Melilla', 'Melilla', 'usuario', '45318662M'),
-(15, 'pedro', 'Alumno2021.', 'pedro', 'martinez', 'jimenez', '666475487', 'tonimanuel4@gmail.com', '52440', 'Melilla', 'Melilla', 'usuario', '45313662M');
+(10, 'Administrador', 'Alumno2021.', 'Admin', 'Admin', 'Admin', '123548754', 'admin@gmail.com', '<br /', 'Melilla', 'Melilla', 'admin', '45314595K'),
+(12, 'antonio', 'Alumno2021.', 'Antonio', 'Martinez ', 'El mouanid', '606743856', 'tonimanuel4@gmail.com', '<br /', 'Melilla', 'Melilla', 'usuario', '45313662M'),
+(14, 'manuel', 'Alumno2021.', 'manuel', 'martinez', 'martinez', '666475487', 'tonimanuel4@gmail.com', '52440', 'Melilla', 'Melilla', 'usuario', '45313862M'),
+(15, 'pedro', 'Alumno2021.', 'pedro', 'martinez', 'jimenez', '666475487', 'tonimanuel4@gmail.com', '52440', 'Melilla', 'Melilla', 'usuario', '45136662M');
 
 -- --------------------------------------------------------
 
@@ -224,7 +224,8 @@ INSERT INTO `videojuego` (`idVideojuego`, `Titulo`, `Compania`, `Publicacion`, `
 (10, 'World of Warcraft: Shadowlans', 'Blizzard', '2020-11-23', ' Enfréntate al mas allá, El velo entre la vida y la muerte ya no existe.      Con un único acto de destrucción, Sylvanas Brisaveloz ha abierto el camino al mas alla. Los defensores mas entregados de Azeroth han acabado en una oscuridad que lo devora todo. Una antigua fuerza mortal amenaza con romper sus ataduras y deshilachar la realidad. Reinos ocultos de maravillas y terrores esperan a aquellos que se atrevan a pasar al otro lado. Las Tierras Sombrías albergan un reino de difuntos. Se trata de un mundo entre mundos cuyo delicado equilibro preserva la vida y la muerte.      Como adalid de Azeroth, se te ha otorgado el poder de cruzar en cuerpo y alma. Ahora debes investigar una conspiración para deshacer el cosmos y ayudar a las leyendas del pasado y del presente de Warcraft a regresar a su hogar... o a cruzar al otro lado.', 'imagenes/wow shadowlands.jpg', 50, 20),
 (11, 'Chrono Trigger', 'Square', '1995-03-11', 'El clasico juego de rol regresa cargado    de mejoras, viaja al pasado mas remoto, al futuro lejano y al fin de los tiempos. Comienza una gran aventura para salvar el planeta...    Chrono Trigger es el calebre juego de rol creado por un magnifico equipo compuesto por Yuji Horii (DRAGON QUEST) , Akira Toriyama (Dragon Ball) y los creadores de FINAL FANTASY. A medida que avanzas en la trama, viajaras a distintas epocas historicas: el presente, el Medioevo, el futuro, la Prehistori-a y la Antiguedad. Esta apasionante aventura epica entretendras horas y horas tanto a los entusiastas de la serie como a los jugadores noveles.    Esta es la version definitiva de CHRONO TRIGGER, y en ella se han actualizado los controles y se han renovado los graficos y el sonido para que tu aventura sea todavia mas agradable y divertida de jugar. Para completar tu viaje, este titulo también incluye las misteriosas mazmorras \"Vortice dimensional\" y \"Santuario olvidado\". Enfréntate a los desafíos que te esperan y quizás consigas revelar secretos antiguos...    Historia    Gracias a un encuentro fortuito en la plaza de Lynne durante la Feria del milenio de Gardia, nuestro joven heroe Chrono se encuentra con una chica llamada Marle Deciden explorar la feria juntos y allí acuden a la exhibición de una nueva tecnología de teletransporte inventada por Lucca, la amiga de Crono.    A Marle le pica la curiosidad y, como no le teme a nada, se ofrece voluntaria para participar en una demostración. Sin embargo, la maquina se estropea en el momento clave y envía a Marle a una dimensión alternativa. Crono encuentra el colgante de la chica y decide ir tras ella para salvarla, pero aparece en el pasado... Cuatrocientos anos antes de su época. Viaja al pasado mas remoto, al futuro lejano e incluso al fin de los tiempos. a.', 'imagenes/chrono trigger.png', 50, 15),
 (28, 'Inazuma Eleven Go: ', 'Level5', '2020-11-23', 'es un videojuego de rol y deportes para Nintendo 3DS desarrollado y publicado por Level-5. Salio a la venta el 15 de diciembre de 2011 en Japon y el 13 de junio de 2014 en Europa. Hay dos versiones del juego, Shine y Dark, que se lanzaron en Europa como Luz y Sombra. Una serie manga del mismo nombre basada en el juego comenzo a publicarse en la revista japonesa CoroCoro Comic, mientras que el anime basado en el juego realizado por OLM se comenzó a emitir el 14 de mayo de 2011.', 'imagenes/inazuma eleven go.jpg', 50, 20),
-(30, 'Grand Theft Auto V', 'Rockstar Games', '2013-09-17', 'Grand Theft Auto V (abreviado como GTA V o GTA 5) es un videojuego de accion-aventura de mundo abierto desarrollado por el estudio Rockstar North y distribuido por Rockstar Games. Fue lanzado el 17 de septiembre de 2013 para las consolas PlayStation 3 y Xbox 360. Posteriormente, fue lanzado el 18 de noviembre de 2014 para las consolas de nueva generación PlayStation 4 y Xbox One con mejores gráficos y novedades interesantes como la vista en primera persona, luego para Microsoft Windows el 14 de abril de 2015 y finalmente se confirma su lanzamiento para PlayStation 5, Xbox Series X y Xbox Series S en la segunda mitad del 2021.5.6. Se trata del primer gran titulo en la serie Grand Theft Auto desde el lanzamiento de Grand Theft Auto IV en 2008, el cual estrena la era HD de la mencionada serie de videojuegos.', 'imagenes/gta.jpg', 50, 20);
+(30, 'Grand Theft Auto V', 'Rockstar Games', '2013-09-17', 'Grand Theft Auto V (abreviado como GTA V o GTA 5) es un videojuego de accion-aventura de mundo abierto desarrollado por el estudio Rockstar North y distribuido por Rockstar Games. Fue lanzado el 17 de septiembre de 2013 para las consolas PlayStation 3 y Xbox 360. Posteriormente, fue lanzado el 18 de noviembre de 2014 para las consolas de nueva generación PlayStation 4 y Xbox One con mejores gráficos y novedades interesantes como la vista en primera persona, luego para Microsoft Windows el 14 de abril de 2015 y finalmente se confirma su lanzamiento para PlayStation 5, Xbox Series X y Xbox Series S en la segunda mitad del 2021.5.6. Se trata del primer gran titulo en la serie Grand Theft Auto desde el lanzamiento de Grand Theft Auto IV en 2008, el cual estrena la era HD de la mencionada serie de videojuegos.', 'imagenes/gta.jpg', 50, 20),
+(31, 'Fifa', 'EA SPORTS', '2021-10-10', 'Futbol', 'images/Fifa.jpg', 20, 20);
 
 --
 -- Indexes for dumped tables
@@ -310,7 +311,7 @@ ALTER TABLE `comentariovideojuego`
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `plataforma`
