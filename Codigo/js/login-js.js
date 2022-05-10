@@ -14,24 +14,32 @@ const expresiones = {
 	password: /^(?=.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$/,
 }
 
-/*Funciones para validar cada campos (usuario, contraseña, email, DNi)*/
+/*Funciones para validar cada campos (usuario, )*/
 function validarUsuario(){
+	if(usuario.value!=""){
 	if(expresiones.usuario.test(usuario.value)){
 		document.getElementById('usuario_error').style.visibility = "hidden";
 	}else{
 		document.getElementById('usuario_error').style.visibility = "visible";
 		document.getElementById('usuario_error').style.color = "red";
 	}
+}else{
+	document.getElementById('usuario_error').style.visibility = "hidden";	
 }
-
+}
 /*Funciones para validar la contraseña  y para gestionar el control de errores*/
 function validarPassword(){
+	if(password.value!=""){
+
 	if(expresiones.password.test(password.value)){
 		document.getElementById('password_error').style.visibility = "hidden";
 	}else{
 		document.getElementById('password_error').style.visibility = "visible";
 		document.getElementById('password_error').style.color = "red";
 	}	
+}else{
+	document.getElementById('password_error').style.visibility = "hidden";
+}
 }
 
 /*Funciones para validar los botones que se van a usar para validar todo lo demás*/

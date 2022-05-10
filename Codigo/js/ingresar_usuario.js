@@ -42,32 +42,50 @@ const expresiones = {
 
 /*Funciones para validar el usuario  y para gestionar el control de errores*/
 function validarUsuario(){
+	console.log(usuario.value);
+if(usuario.value!=""){
 	if(expresiones.usuario.test(usuario.value)){
 		document.getElementById('usuario_error').style.visibility = "hidden";
 	}else{
-		document.getElementById('usuario_error').style.visibility = "visible";
+		
+			document.getElementById('usuario_error').style.visibility = "visible";
+		
+		
 		document.getElementById('usuario_error').style.color = "red";
 	}
+}else{
+	document.getElementById('usuario_error').style.visibility = "hidden";
+}
+
 }
 
 /*Funciones para validar la contraseña  y para gestionar el control de errores*/
 function validarPassword(){
+	if(password.value!=""){
 	if(expresiones.password.test(password.value)){
 		document.getElementById('password_error').style.visibility = "hidden";
 	}else{
 		document.getElementById('password_error').style.visibility = "visible";
 		document.getElementById('password_error').style.color = "red";
-	}	
+
+	}
+}else{
+	document.getElementById('password_error').style.visibility = "hidden";
+}	
 }
 
 /*Funciones para validar el nombre  y para gestionar el control de errores*/
 function validarNombre(){
+	if(nombre.value!=""){
 	if(expresiones.nombre.test(nombre.value)){
 		document.getElementById('nombre_error').style.visibility = "hidden";
 	}else{
 		document.getElementById('nombre_error').style.visibility = "visible";
 		document.getElementById('nombre_error').style.color = "red";
 	}	
+}else{
+	document.getElementById('nombre_error').style.visibility = "hidden";
+}
 }
 
 /*Funciones para validar el primer apellido y para gestionar el control de errores*/
@@ -112,12 +130,17 @@ function validarEmail(){
 
 /*Funciones para validar el codigo postal y para gestionar el control de errores*/
 function validarCp(){
+	if(cp.value!=""){
 	if(expresiones.cp.test(cp.value)){
 		document.getElementById('cp_error').style.visibility = "hidden";
 	}else{
 		document.getElementById('cp_error').style.visibility = "visible";
 		document.getElementById('cp_error').style.color = "red";
 	}	
+}else{
+	
+		document.getElementById('cp_error').style.visibility = "hidden";
+}
 }
 
 
@@ -180,12 +203,17 @@ function validarProvincia(cpostal){
 
 /*Funciones para validar la comunidad autonoma y para gestionar el control de errores*/
 function validarComunidadAutonoma(){
+	if(comunidadautonoma.value!=""){
 	if(expresiones.comunidadautonoma.test(comunidadautonoma.value)){
 		document.getElementById('comunidadautonoma_error').style.visibility = "hidden";
 	}else{
 		document.getElementById('comunidadautonoma_error').style.visibility = "visible";
 		document.getElementById('comunidadautonoma_error').style.color = "red";
-	}	
+	}
+		
+}else{
+	document.getElementById('comunidadautonoma_error').style.visibility = "hidden";
+}
 }
 
 /*Funciones para validar el dni y para gestionar el control de errores*/
