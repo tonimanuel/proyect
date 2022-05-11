@@ -145,15 +145,18 @@ if (isset($_SESSION['Usuario'])) {
 							<p><?=$comentario['comentario']?></p>
 						</div>
 					</div>
+					<?php if ($_SESSION['Rol']=="admin") {
+						
+					 ?>
 					<form action="videoconsolasusuario.php" class="col-12" method="POST"> 
 							  		<input type="hidden" name="idComenElim" value="<?php echo $comentario['idComentario']; ?>">
 								  	<input type="submit" class="botoDesconecta col-12 text-light" name="borrarComentario" value="Eliminar">
 						</form>
 				<?php
-			
 			}
-			
+			}
 		}
+		
 		if (isset($_POST['eliminarPla'])) {
 			$resulElimJue=eliminarPlataformaCesta($conexion,$_POST['idItem'],$_POST['idConsola'],$_POST['precioElim'],$_POST['cantidadEli'],$_POST['idCesta']);
 			if ($resulElimJue) {
