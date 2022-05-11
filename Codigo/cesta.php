@@ -75,7 +75,6 @@ while ($filas=mysqli_fetch_assoc($carr)) {
         <h5 class="card-title"><?php echo $plataforma['Nombre'] ?></h5>
         
         <p class="card-text"><b>Precio: </b><?php echo $plataforma['Precio'] ?><b> Euros X <?php echo $filas['Cantidad'] ?></b><b>=</b><?php echo $plataforma['Precio']*$filas['Cantidad']; ?><b> Euros</b></p>
-        <p class="card-text"><form action="cesta.php" method="POST"><label for="cantida">Cantidad: </label><input type="hidden" name="idItem" value="<?php echo $filas['idItem']; ?>"><input type="hidden" name="idCesta" value="<?php echo $_SESSION['idUsuario'] ?>"><input type="number" name="cantidad"> <input type="submit" value="Cambiar" name="cambiarC"></form></p>
         <form action="detallesconsolas.php" method="post">
             <input type="hidden" name="idItem"  value="<?php echo $filas['id']; ?>">
             <input type="hidden" name="idCesta"  value="<?php echo $_SESSION['idUsuario']; ?>">
@@ -106,7 +105,6 @@ while ($filas=mysqli_fetch_assoc($carr)) {
         <h5 class="card-title"><?php echo $juego['Titulo'] ?></h5>
         
         <p class="card-text"><b>Precio: </b><?php echo $juego['Precio'] ?><b> Euros X <?php echo $filas['Cantidad'] ?></b><b>=</b><?php echo $juego['Precio']*$filas['Cantidad']; ?><b> Euros</b></p>
-        <p class="card-text"><form action="cesta.php" method="POST"><label for="cantida">Cantidad: </label><input type="hidden" name="idItem" value="<?php echo $filas['idItem']; ?>"><input type="hidden" name="idCesta" value="<?php echo $_SESSION['idUsuario'] ?>"><input type="number" name="cantidad"> <input type="submit" value="Cambiar" name="cambiarC"></form></p>
         <form action="detallesjuego.php" method="post">
             <input type="hidden" name="idItem"  value="<?php echo $filas['id']; ?>">
             <input type="hidden" name="idCesta"  value="<?php echo $_SESSION['idUsuario']; ?>">
