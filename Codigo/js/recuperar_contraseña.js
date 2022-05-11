@@ -16,6 +16,7 @@ function validarDni() {
     let letra;
     let dn = dni.value;
     dni.value = dni.value.slice(0, 8) + dni.value.charAt(8).toUpperCase();
+if(dni.value!=""){
     if(expresiones.dni.test (dn) == true){
        numero = dn.substr(0,dn.length-1);
        letr = dn.substr(dn.length-1,1);
@@ -31,6 +32,9 @@ function validarDni() {
     }else{
         document.getElementById("dni_error").style.visibility = "visible";
         document.getElementById("dni_error").style.color = "red";
+     }
+}else{
+  document.getElementById("dni_error").style.visibility = "hidden";
      }
   }
 

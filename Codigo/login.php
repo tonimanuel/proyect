@@ -31,7 +31,7 @@
 				</div>				
 				<div class="row">
 					<button type="submit" id="boton" class="nav-link active" aria-current="page" >Logueate</button>
-					<button type="submit" id="bton" class="nav-link active" ><a href="recuperarContrasena.php" class="nav-link">¿Olvidaste tu contraseña?</a></button>
+					<button type="submit" id="boton" class="nav-link active" ><a href="recuperarContrasena.php" class="nav-link">¿Olvidaste tu contraseña?</a></button>
 				
 				</div>	
 

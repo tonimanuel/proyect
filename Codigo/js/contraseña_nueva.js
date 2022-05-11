@@ -11,12 +11,16 @@ const expresiones = {
 
 /*Funciones para validar la contraseña  y para gestionar el control de errores*/
 function validarPassword(){
+if(password.value!=""){
 	if(expresiones.password.test(password.value)){
 		document.getElementById('password_error').style.visibility = "hidden";
 	}else{
 		document.getElementById('password_error').style.visibility = "visible";
 		document.getElementById('password_error').style.color = "red";
 	}	
+}else{
+	document.getElementById('password_error').style.visibility = "hidden";
+	 }
 }
 
 /*Funciones para validar los botones que se van a usar para validar todo lo demás*/

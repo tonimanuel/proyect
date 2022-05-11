@@ -22,7 +22,7 @@
 		<label><b>Introduce el Dni de su cuenta:</b></label>
 		<input type="text" name="dni" id="dni"  class="form-control" placeholder="Ejemplo: 45314598k">
 		<span id="dni_error">El Dni introducido no es correcto</span>
-		<input class="boton" type="submit" name="cambiarContra">
+		<input id="botones" class="col-12 text-light" type="submit" name="cambiarContra">
 		
 	</form>
 	</center>

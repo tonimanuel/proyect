@@ -29,7 +29,7 @@
 		<label><b>Contraseña nueva:</b></label>
 		<input type="text" name="pass" id="password" class="form-control" placeholder="Ejemplo: Alumn@2020">
 		<span id="password_error">La contraseña introducida no es valida</span>
-	    <input type="submit" class="boton" name="nuevaContra">
+	    <input type="submit" id="botones" class="col-12 text-light" name="nuevaContra">
 	    
 	</form>
 	<?php
@@ -52,7 +52,7 @@
 						echo "El usuario existe";
 						crearSesion($usuario);
 					}else {
-						header('Location: perfil.php');
+						header('Location: recuperarContrasena.php');
 					}
 				}
 			
