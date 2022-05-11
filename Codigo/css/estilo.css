@@ -3,13 +3,13 @@ body{
 	background-color: #a3b2aa;
 }
 .comentario{
-	border-radius: 27px 27px 27px 27px;
-	-moz-border-radius: 27px 27px 27px 27px;
-	-webkit-border-radius: 27px 27px 27px 27px;
+	border-radius: 10px 10px 200px 10px;
+-moz-border-radius: 10px 10px 200px 10px;
+-webkit-border-radius: 10px 10px 200px 10px;
 	border: 1px solid #a3b2aa;
 color: #a3b2aa;
-	background-image: url('https://th.bing.com/th/id/OIP.vLtxVSJQIRNCe2V4-49b8wHaEo?w=287&h=180&c=7&r=0&o=5&pid=1.7');
-
+background-image: url('https://th.bing.com/th/id/OIP.vLtxVSJQIRNCe2V4-49b8wHaEo?w=287&h=180&c=7&r=0&o=5&pid=1.7');
+filter: brightness(150%);
 }
 /*Estilo para la cabecera de la pagina y para que sea responsive*/
 header{

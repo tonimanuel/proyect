@@ -70,7 +70,7 @@ while ($filas=mysqli_fetch_assoc($carr)) {
     <div class="col-md-4">
       <img src="<?php echo $plataforma['Imagen'] ?>">
     </div>
-    <div class="col-md-8">
+    <div class="col-md-3">
       <div class="card-body">
         <h5 class="card-title"><?php echo $plataforma['Nombre'] ?></h5>
         
@@ -81,7 +81,7 @@ while ($filas=mysqli_fetch_assoc($carr)) {
             <input type="hidden" name="precioElim"  value="<?php echo $filas['PrecioItem']; ?>">
             <input type="hidden" name="cantidadEli"  value="<?php echo $filas['Cantidad']; ?>">
             <input type="hidden" name="idConsola" value="<?php echo $plataforma['idPlataforma']; ?>">
-            <input type="submit" value="Eliminar" name="eliminarPla">
+            <input type="submit" id="botones" class="col-12 text-light" value="Eliminar" name="eliminarPla">
         </form>
     </div>
     </div>
@@ -100,7 +100,7 @@ while ($filas=mysqli_fetch_assoc($carr)) {
     <div class="col-md-4">
       <img src="<?php echo $juego['Imagen'] ?>">
     </div>
-    <div class="col-md-8">
+    <div class="col-md-3">
       <div class="card-body">
         <h5 class="card-title"><?php echo $juego['Titulo'] ?></h5>
         
@@ -111,7 +111,7 @@ while ($filas=mysqli_fetch_assoc($carr)) {
             <input type="hidden" name="precioElim"  value="<?php echo $filas['PrecioItem']; ?>">
             <input type="hidden" name="cantidadEli"  value="<?php echo $filas['Cantidad']; ?>">
             <input type="hidden" name="idJuego" value="<?php echo $juego['idVideojuego']; ?>">
-            <input type="submit" value="Eliminar" name="eliminarJue">
+            <input type="submit" id="botones" class="col-12 text-light" value="Eliminar" name="eliminarJue">
         </form>
       </div>
     </div>

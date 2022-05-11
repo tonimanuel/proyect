@@ -66,11 +66,11 @@ if (isset($_SESSION['Usuario'])) {
 	
 
 							  ?>
-							  <form action="cesta.php" method="POST"> 
+							  <form action="cesta.php" class="col-12" method="POST"> 
 							  		<input type="hidden" name="PrecioJ" value="<?php echo $fila['Precio']; ?>">
 								  	<input type="hidden" name="idJuego" value="<?php echo $fila['idVideojuego']; ?>">
-									<input step="1" name="cantidadJ" style="color: black;" min="1" max="<?php echo $fila['Stock']; ?>" type="number">
-									<input type="submit" name="anadirJuego" value="Añadir a Carrito">
+									<input step="1" class="form-control" name="cantidadJ" style="color: black;" min="1" max="<?php echo $fila['Stock']; ?>" type="number">
+									<input type="submit" id="botones" class="col-12 text-light" name="anadirJuego" value="Añadir a Carrito">
 								</form>
 							  <?php
 }
@@ -100,7 +100,7 @@ if (isset($_SESSION['Usuario'])) {
 					<div class="form-group">
 						<textarea class="form-control" name="comentario" id="exampleFormControlTextarea1" rows="3"></textarea>
 					</div>
-					<input type="submit" style="color: #a3b2aa; font-size:20px;" class="col-12 bg-dark" name="subir-comentario" value="Enviar comentario">
+					<input type="submit" id="botones" class="col-12 text-light" name="subir-comentario" value="Enviar comentario">
 				</form>
 			</div>
 		<?php
@@ -137,7 +137,7 @@ if (isset($_SESSION['Usuario'])) {
 
 				?>
 					
-					<div class="jumbotron-fluid ml-3 comentario">
+					<div class="col-12 ml-3 comentario">
 						<div class="container">
 							<h5><?=$comentario['Nombre']?></h5>
 							<p><?=$comentario['fecha']?>.</p>
