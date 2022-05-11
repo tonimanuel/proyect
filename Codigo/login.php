@@ -30,9 +30,11 @@
 					</div>
 				</div>				
 				<div class="row">
-					<button type="submit" id="boton" class="btn btn-primary col-5 mx-4">Logueate</button>
-					<button type="submit" id="bton" class="btn btn-primary col-6" ><a href="recuperarContrasena.php" class="nav-link">¿Olvidaste tu contraseña?</a></button>
-				</div>				
+					<button type="submit" id="boton" class="nav-link active" aria-current="page" >Logueate</button>
+					<button type="submit" id="bton" class="nav-link active" ><a href="recuperarContrasena.php" class="nav-link">¿Olvidaste tu contraseña?</a></button>
+				
+				</div>	
+
 			</form>
 		</div>
 	</div>

@@ -30,7 +30,6 @@ function validarUsuario(){
 /*Funciones para validar la contraseña  y para gestionar el control de errores*/
 function validarPassword(){
 	if(password.value!=""){
-
 	if(expresiones.password.test(password.value)){
 		document.getElementById('password_error').style.visibility = "hidden";
 	}else{

@@ -91,7 +91,7 @@
     </div>
 	
 	<div class="row">
-		<button type="submit" id="boton" class="btn btn-primary">Ingresar</button>
+		<button type="submit" id="boton" class="nav-link active" >Ingresar</button>
 	</div>
 </form>
 </div>
