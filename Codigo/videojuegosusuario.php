@@ -55,6 +55,10 @@
 				</div>
 			<?php
 				}
+				if (isset($_POST['borrarComentario'])) {
+					echo $_POST['borrarComentario']."-".$_POST['idComenElim'];
+					$elim=eliminarComentarioJuego($conexion,$_POST['idComenElim']);
+				}
 			?>
 		</div>
 

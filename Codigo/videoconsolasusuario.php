@@ -61,7 +61,10 @@
 	<?php
 
 	}
-
+	if (isset($_POST['borrarComentario'])) {
+		echo $_POST['borrarComentario']."-".$_POST['idComenElim'];
+		$elim=eliminarComentarioPlataforma($conexion,$_POST['idComenElim']);
+	}
 	?>
 </div>
 

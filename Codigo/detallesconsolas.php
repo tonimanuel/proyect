@@ -85,7 +85,7 @@ if (isset($_SESSION['Usuario'])) {
 
 	?>
 	
-</div>
+
 </div>
 	</div>
 	<div class="row">
@@ -116,7 +116,7 @@ if (isset($_SESSION['Usuario'])) {
 	}
 ?>
 
-<div class="comentario">
+<div class="">
 	<?php
 	    if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['subir-comentario'])){
 			$pid= $idPlataforma;
@@ -131,24 +131,28 @@ if (isset($_SESSION['Usuario'])) {
 		}
 		$id=$idPlataforma;
 		$sqll = "SELECT * FROM `comentarioplataforma` WHERE idPlataforma='$id'";
-		$sqlll = "SELECT comentario, comentarioplataforma.fecha as fecha, usuario.Nombre FROM comentarioplataforma inner join usuario on comentarioplataforma.idUsuario = usuario.idUsuario WHERE comentarioplataforma.idPlataforma = '$id'";
+		$sqlll = "SELECT comentario, idComentario, comentarioplataforma.fecha as fecha, usuario.Nombre FROM comentarioplataforma inner join usuario on comentarioplataforma.idUsuario = usuario.idUsuario WHERE comentarioplataforma.idPlataforma = '$id'";
 		$res = mysqli_query($conexion, $sqlll);
 
 		if (mysqli_num_rows($res) > 0){
 			while($comentario = mysqli_fetch_assoc($res)){ 
 
 				?>
-					<div class="col-12 ml-3 comentario">
+					<div class="col-12 comentario">
 						<div class="container">
 							<h5><?=$comentario['Nombre']?></h5>
 							<p><?=$comentario['fecha']?>.</p>
 							<p><?=$comentario['comentario']?></p>
 						</div>
 					</div>
-
+					<form action="videoconsolasusuario.php" class="col-12" method="POST"> 
+							  		<input type="hidden" name="idComenElim" value="<?php echo $comentario['idComentario']; ?>">
+								  	<input type="submit" class="botoDesconecta col-12 text-light" name="borrarComentario" value="Eliminar">
+						</form>
 				<?php
 			
 			}
+			
 		}
 		if (isset($_POST['eliminarPla'])) {
 			$resulElimJue=eliminarPlataformaCesta($conexion,$_POST['idItem'],$_POST['idConsola'],$_POST['precioElim'],$_POST['cantidadEli'],$_POST['idCesta']);

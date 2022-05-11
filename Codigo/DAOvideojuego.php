@@ -42,6 +42,12 @@
         $resultado = mysqli_query($conexion, $consulta);
         return $resultado;
     }
+//Funcion usada para mostrar un juego en especifico y para la funcion de editar sus roles
+function eliminarComentarioJuego($conexion,$idComentario){
+    $consulta = "DELETE FROM comentariovideojuego WHERE `comentariovideojuego`.`idComentario` = $idComentario";
+    $resultado = mysqli_query($conexion, $consulta);
+    return $resultado;
+}
 
 //Funcion para insertar un videojuego con su producto
     function insertarproductoo($conexion, $ultimoID, $idPlataforma, $stock, $precio){

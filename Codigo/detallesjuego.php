@@ -129,7 +129,7 @@ if (isset($_SESSION['Usuario'])) {
 		}
 		$id=$idVideojuego;
 		$sqll = "SELECT * FROM `comentarioplataforma` WHERE idPlataforma='$id'";
-		$sqlll = "SELECT comentario, comentariovideojuego.fecha as fecha, usuario.Nombre FROM comentariovideojuego inner join usuario on comentariovideojuego.idUsuario = usuario.idUsuario  WHERE comentariovideojuego.Videojuego = '$id'";
+		$sqlll = "SELECT comentario, idComentario, comentariovideojuego.fecha as fecha, usuario.Nombre FROM comentariovideojuego inner join usuario on comentariovideojuego.idUsuario = usuario.idUsuario  WHERE comentariovideojuego.Videojuego = '$id'";
 		$res = mysqli_query($conexion, $sqlll);
 
 		if (mysqli_num_rows($res) > 0){
@@ -142,11 +142,21 @@ if (isset($_SESSION['Usuario'])) {
 							<h5><?=$comentario['Nombre']?></h5>
 							<p><?=$comentario['fecha']?>.</p>
 							<p><?=$comentario['comentario']?></p>
+							
+								<?php
+			?>
 						</div>
+						
 					</div>
+					<form action="videojuegosusuario.php" class="col-12" method="POST"> 
+							  		<input type="hidden" name="idComenElim" value="<?php echo $comentario['idComentario']; ?>">
+								  	<input type="submit" class="botoDesconecta col-12 text-light" name="borrarComentario" value="Eliminar">
+						</form>
 				<?php
 			
 			}
+			
+								
 		}
 		if (isset($_POST['eliminarJue'])) {
 			$resulElimJue=eliminarJuegoCesta($conexion,$_POST['idItem'],$_POST['idJuego'],$_POST['precioElim'],$_POST['cantidadEli'],$_POST['idCesta']);

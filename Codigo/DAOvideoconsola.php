@@ -35,7 +35,11 @@
         $resultado = mysqli_query($conexion, $consulta);
         return $resultado;
     }
-
+    function eliminarComentarioPlataforma($conexion,$idComentario){
+        $consulta = "DELETE FROM comentarioplataforma WHERE `comentarioplataforma`.`idComentario` = $idComentario";
+        $resultado = mysqli_query($conexion, $consulta);
+        return $resultado;
+    }
 //Funcion que nos permite mostrar los datos de una consola por su id
      function ensenarconsolaporid($conexion,$idPlataforma){
         $consulta = "SELECT * FROM `plataforma` WHERE `idPlataforma` = '$idPlataforma'";
