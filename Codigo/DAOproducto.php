@@ -1,4 +1,5 @@
  <?php
+ //funcuion para el item 
 function consultaItem($conexion,$idCesta){
     $consulta = "select * from item where idCesta='$idCesta'";
     $resultado = mysqli_query($conexion,$consulta);
@@ -57,6 +58,7 @@ function consultaPrecioCesta($conexion,$idCesta){
     $resultado = mysqli_query($conexion, $consulta);
     return $resultado;
 }
+//funcion que nos borra producto
     function borrarproducto($conexion,$idproductos){
         $consulta = "DELETE FROM `tiendaonline`.`productos` WHERE (`idProductos` = '$idproductos')";
         $resultado = mysqli_query($conexion, $consulta);
