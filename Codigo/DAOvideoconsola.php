@@ -35,6 +35,7 @@
         $resultado = mysqli_query($conexion, $consulta);
         return $resultado;
     }
+//funcuion para eliminar el comentarioe desde los comentarios como administrador
     function eliminarComentarioPlataforma($conexion,$idComentario){
         $consulta = "DELETE FROM comentarioplataforma WHERE `comentarioplataforma`.`idComentario` = $idComentario";
         $resultado = mysqli_query($conexion, $consulta);
@@ -46,7 +47,7 @@
         $resultado = mysqli_query($conexion, $consulta);
         return $resultado;
     }
-
+//funcion para mostrar el logo
       function logo($conexion,$idPlataforma){
         $consulta = "SELECT `Logo` FROM `plataforma` WHERE `idPlataforma` = '$idPlataforma'";
         $resultado = mysqli_query($conexion, $consulta);
