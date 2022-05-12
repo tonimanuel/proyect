@@ -44,6 +44,7 @@
 
 	while ($fila=mysqli_fetch_array($result)) {
 
+//Contenedor que englobaliza los div de los comentarios.
 	?>
 <div class="container">
 	<div class="row">
@@ -91,8 +92,9 @@ if (isset($_SESSION['Usuario'])) {
 	<div class="row">
 	<div class="comentarios">
 
+	
 <?php
-
+//este if se utiliza para añadir comentarios en cada consola.
 	if(isset($_SESSION['Usuario'])){
 		?>
 			<div class="enviar-comentario">
@@ -118,6 +120,7 @@ if (isset($_SESSION['Usuario'])) {
 
 <div class="">
 	<?php
+	//div para englobalizar el comentario
 	    if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['subir-comentario'])){
 			$pid= $idPlataforma;
 			$uid = $_SESSION['idUsuario'];
