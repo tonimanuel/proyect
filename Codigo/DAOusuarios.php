@@ -11,11 +11,13 @@ function consultaUsuario($conexion,$usuario){
         $resultado = mysqli_query($conexion, $consulta);
         return $resultado;
     }
+ //funcion para recuperar el usuario de la tabla usuario   
     function usuarioRecuperar($conexion,$dni){
         $consulta = "SELECT * FROM `usuario` WHERE Dni='$dni'" ;
         $resultado = mysqli_query($conexion, $consulta);
         return $resultado;
     }
+//funcion para cambiar la contraseña y actualizamos la tabla usuario.
     function cambiarContra($conexion,$contra,$id){
         $consulta = "UPDATE `usuario` SET `Password` = '$contra' WHERE `idUsuario` = $id" ;
         $resultado = mysqli_query($conexion, $consulta);
@@ -27,6 +29,7 @@ function consultaUsuario($conexion,$usuario){
         $resultado = mysqli_query($conexion, $consulta);
         return $resultado;
     }
+//funcion para inserta un usuario admin en nuestra base de datos.
     function insertarUsuariosAdmin($conexion,$usuario,$password,$nombre,$apellido1,$apellido2,$telefono, $email, $cp, $provincia, $comunidadautonoma,$dni,$rol){
         $consulta = "INSERT INTO usuario (`Usuario`, `Password`, `Nombre`, `Apellido1`, `Apellido2`, `Telefono`, `Email`, `CP`, `Provincia`, `ComunidadAutonoma`, `Dni` ,`Rol`) VALUES ('$usuario','$password','$nombre','$apellido1','$apellido2','$telefono', '$email', '$cp', '$provincia', '$comunidadautonoma', '$dni' ,'$rol')";
         $resultado = mysqli_query($conexion, $consulta);
@@ -63,20 +66,20 @@ function consultaUsuario($conexion,$usuario){
          $resultado = mysqli_query($conexion, $consulta);
          return $resultado;
     }
-
+//funcion que nos muestra los usuarios en el panel de administrador
     function obtenerUsuarios($conexion){
          $consulta = "SELECT * FROM usuario" ;
          $resultado = mysqli_query($conexion, $consulta);
          return $resultado;
     }
-
+//funcuion para modificar el usuario desde el panel de administrador
     function adminModificaUsuario($conexion,$usuario,$password,$nombre,$apellido1,$apellido2,$telefono,$email,$cp,$provincia,$comunidadautonoma,$dni,$rol,$idUsuario){
        $consulta = "UPDATE `tiendaonline`.`usuario` SET `Usuario` = '$usuario', `Password` = '$password', `Nombre` = '$nombre', `Apellido1` = '$apellido1', `Apellido2` = '$apellido2', `Telefono` = '$telefono', `Email` = '$email', `CP` = '$cp', `Provincia` = '$provincia', `ComunidadAutonoma` = '$comunidadautonoma', `Dni` = '$dni', 
        `Rol` = '$rol' WHERE (`idUsuario` = '$idUsuario')";
         $resultado = mysqli_query($conexion, $consulta);
         return $resultado;
     }
-
+//funcuion para modificar el usuario desde el panel de administrador
     function borrarusuario($conexion,$idUsuario){
         $consulta = "DELETE FROM `tiendaonline`.`usuario` WHERE (`idUsuario` = '$idUsuario')";
         $resultado = mysqli_query($conexion, $consulta);
