@@ -90,7 +90,7 @@ if (isset($_SESSION['Usuario'])) {
 	<div class="comentarios">
 
 <?php
-
+//este if se utiliza para añadir comentarios en cada videojuego.
 	if(isset($_SESSION['Usuario'])){
 		?>
 			<div>
@@ -116,6 +116,7 @@ if (isset($_SESSION['Usuario'])) {
 
 <div class="comentarios-dejados">
 	<?php
+	//ste if se usa para quese muestre el comentario.
 	    if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['subir-comentario'])){
 			$pid= $idVideojuego;
 			$uid = $_SESSION['idUsuario'];
