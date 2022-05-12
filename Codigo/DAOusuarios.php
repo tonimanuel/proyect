@@ -1,4 +1,5 @@
 <?php
+//Funcion para hacer la consulta de usuario
 function consultaUsuario($conexion,$usuario){
     $consulta = "Select * from usuario WHERE  Usuario = '$usuario'";
     $resultado = mysqli_query($conexion,$consulta);
